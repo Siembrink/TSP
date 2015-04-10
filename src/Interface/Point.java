@@ -16,6 +16,7 @@ public class Point {
     public Point(int index, int x, int y) {
         // Leave the status at NULL
         this.index = index;
+        this.status = "";
         this.x = x;
         this.y = y;
     }
