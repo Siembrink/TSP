@@ -21,6 +21,7 @@ public class Field extends JPanel implements MouseListener {
     public Field() {
         setPreferredSize(new Dimension(1001, 1001));
         addMouseListener(this);
+        initializeField();
     }
 
     public void initializeField() {
