@@ -19,6 +19,7 @@ public class Field extends JPanel implements MouseListener {
     private ArrayList<Point> grid;
 
     public Field() {
+        grid = new ArrayList<Point>();
         setPreferredSize(new Dimension(1001, 1001));
         addMouseListener(this);
         initializeField();
