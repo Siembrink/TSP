@@ -1,4 +1,4 @@
-package Interface;
+package Interface.Old;
 
 import javax.swing.*;
 import java.awt.*;

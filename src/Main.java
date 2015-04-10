@@ -1,4 +1,4 @@
-import Interface.Frame;
+import Interface.Old.Frame;
 
 public class Main {
 
