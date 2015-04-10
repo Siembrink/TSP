@@ -4,7 +4,7 @@
  * grid map.
  */
 
-package Interface.Field;
+package Interface;
 
 public class Point {
 
