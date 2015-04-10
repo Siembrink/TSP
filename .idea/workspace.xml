@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Algorithm/Result.java" />
-      <change type="MOVED" beforePath="C:\Users\Wessel\Google Drive\TSP\tsp\src\Algorithm\Main.java" afterPath="$PROJECT_DIR$/src/Algorithm/Algorithm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tsp.iws" />
@@ -478,7 +476,7 @@
       <created>1428658181301</created>
       <option name="number" value="Default" />
       <updated>1428658181301</updated>
-      <workItem from="1428658185761" duration="1420000" />
+      <workItem from="1428658185761" duration="1432000" />
     </task>
     <task id="LOCAL-00001" summary="IntelliJ Commit test">
       <created>1428658374744</created>
@@ -528,11 +526,17 @@
       <option name="project" value="LOCAL" />
       <updated>1428659357039</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="algorithm abstract">
+      <created>1428659616808</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1428659616808</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1420000" />
+    <option name="totallyTimeSpent" value="1432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
@@ -574,7 +578,8 @@
     <MESSAGE value="Update GUI" />
     <MESSAGE value="init alg" />
     <MESSAGE value="psvm" />
-    <option name="LAST_COMMIT_MESSAGE" value="psvm" />
+    <MESSAGE value="algorithm abstract" />
+    <option name="LAST_COMMIT_MESSAGE" value="algorithm abstract" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
