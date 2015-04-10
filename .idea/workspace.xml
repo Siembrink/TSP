@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="Added grid classes &amp; Docstrings">
+    <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="Frame updated">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tsp.iws" />
@@ -614,15 +614,21 @@
       <option name="project" value="LOCAL" />
       <updated>1428665656158</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Frame updated">
+      <created>1428665673983</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1428665673983</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7023000" />
+    <option name="totallyTimeSpent" value="7039000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -667,7 +673,8 @@
     <MESSAGE value="Added grid classes" />
     <MESSAGE value="Frame updated." />
     <MESSAGE value="Added grid classes &amp; Docstrings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added grid classes &amp; Docstrings" />
+    <MESSAGE value="Frame updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frame updated" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
