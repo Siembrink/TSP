@@ -25,6 +25,11 @@ public class Field extends JPanel implements MouseListener {
     }
 
     public void initializeField() {
+        /**
+         * This method creates all the points of the grid and
+         * generates their coordinates, which are used to draw
+         * the points onto the gridmap.
+         */
         // Make a grid of 100x100
         this.size = 100;
         int x = 0;
@@ -51,6 +56,11 @@ public class Field extends JPanel implements MouseListener {
     }
 
     private void selectPoint(MouseEvent e) {
+        /**
+         * This method gets the block coordinates of the point
+         * the user clicks on, so it can later be used to paint
+         * the graphic another color.
+         */
         int rootX = e.getX() - (e.getX() % 10);
         int rootY = e.getY() - (e.getY() % 10);
 
@@ -64,6 +74,11 @@ public class Field extends JPanel implements MouseListener {
     }
 
     public void paintComponent(Graphics brush) {
+        /**
+         * This method is the graphics drawing class, it loops
+         * over the grid and adds the points, as well as other
+         * graphics needed to make the grid UI.
+         */
         // Set the background
         brush.setColor(Color.WHITE);
         brush.fillRect(0, 0, 1001, 1001);
