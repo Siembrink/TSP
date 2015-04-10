@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+    //
 
 public class Frame extends JFrame implements ActionListener {
 
@@ -34,7 +34,7 @@ public class Frame extends JFrame implements ActionListener {
     public Frame() {
 
         setTitle("TSP Simulation");
-        setLayout(new GridLayout(3, 5));
+        setLayout(new FlowLayout());
         setSize(1000, 1000);
 
         width = new JLabel("Width : ");
@@ -44,6 +44,15 @@ public class Frame extends JFrame implements ActionListener {
 
         reset = new JButton("Reset");
         add(reset);
+        reset.addActionListener(this);
+
+        start = new JButton("Start");
+        add(start);
+        start.addActionListener(this);
+
+        stop = new JButton("Stop");
+        add(stop);
+        stop.addActionListener(this);
         enumeration = new JButton("Enumeration");
         add(enumeration);
         enumeration.addActionListener(this);
@@ -56,7 +65,7 @@ public class Frame extends JFrame implements ActionListener {
         add(random);
         random.addActionListener(this);
 
-        add(new Field());
+       // add(new Field());
 
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
