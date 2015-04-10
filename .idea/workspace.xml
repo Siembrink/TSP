@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="Added grid drawing methods &amp; functionality">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interface/Field/Field.java" afterPath="$PROJECT_DIR$/src/Interface/Field/Field.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interface/Field/Point.java" afterPath="$PROJECT_DIR$/src/Interface/Field/Point.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,35 +26,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Field.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Field.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Interface/Field/Field.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53067994">
-              <caret line="79" column="43" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#2527#2528#0" expanded="true" />
-                <element signature="e#2557#2558#0" expanded="true" />
+                <element signature="e#2613#2614#0" expanded="true" />
+                <element signature="e#2643#2644#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Point.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Interface/Field/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.4792703">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#409#410#0" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#474#475#0" expanded="true" />
                 <element signature="e#518#519#0" expanded="true" />
-                <element signature="e#543#544#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#616#617#0" expanded="true" />
+                <element signature="e#554#555#0" expanded="true" />
+                <element signature="e#583#584#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+                <element signature="e#709#710#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,8 +96,8 @@
         <option value="$PROJECT_DIR$/src/Interface/Old/Frame.java" />
         <option value="$PROJECT_DIR$/src/Interface/Point.java" />
         <option value="$PROJECT_DIR$/src/Interface/Field.java" />
-        <option value="$PROJECT_DIR$/src/Interface/Field/Point.java" />
         <option value="$PROJECT_DIR$/src/Interface/Field/Field.java" />
+        <option value="$PROJECT_DIR$/src/Interface/Field/Point.java" />
       </list>
     </option>
   </component>
@@ -525,7 +527,7 @@
       <created>1428658181301</created>
       <option name="number" value="Default" />
       <updated>1428658181301</updated>
-      <workItem from="1428658185761" duration="6776000" />
+      <workItem from="1428658185761" duration="7034000" />
     </task>
     <task id="LOCAL-00001" summary="IntelliJ Commit test">
       <created>1428658374744</created>
@@ -641,11 +643,23 @@
       <option name="project" value="LOCAL" />
       <updated>1428662916380</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added grid drawing methods &amp; functionality">
+      <created>1428664972493</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1428664972493</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Added grid drawing methods &amp; functionality + Small fix">
+      <created>1428665098745</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1428665098745</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6776000" />
+    <option name="totallyTimeSpent" value="7034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="960" height="1050" extended-state="0" />
@@ -694,7 +708,8 @@
     <MESSAGE value="Added grid classes" />
     <MESSAGE value="Added grid classes &amp; Docstrings" />
     <MESSAGE value="Added grid drawing methods &amp; functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added grid drawing methods &amp; functionality" />
+    <MESSAGE value="Added grid drawing methods &amp; functionality + Small fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added grid drawing methods &amp; functionality + Small fix" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -749,32 +764,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interface/Field/Point.java">
+    <entry file="file://$PROJECT_DIR$/src/Interface/Field/Field.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2613#2614#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interface/Field/Field.java">
+    <entry file="file://$PROJECT_DIR$/src/Interface/Field/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53067994">
-          <caret line="79" column="43" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.4792703">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#2527#2528#0" expanded="true" />
-            <element signature="e#2557#2558#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#709#710#0" expanded="true" />
           </folding>
         </state>
       </provider>

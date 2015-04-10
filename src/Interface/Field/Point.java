@@ -28,6 +28,10 @@ public class Point {
         this.status = status;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
     public int getX() {
         return x;
     }
