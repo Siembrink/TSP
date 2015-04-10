@@ -6,7 +6,6 @@ public class IndicatorBlock {
     private boolean status;
     private int posX;
     private int posY;
-
     private boolean statusLoading;
     private boolean statusDone;
 

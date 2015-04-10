@@ -14,7 +14,7 @@ public class Frame extends JFrame implements ActionListener {
     private JButton reset;
 
     public Frame() {
-        setTitle("TSP Simulatie");
+        setTitle("TSP Simulator");
         setSize(new Dimension(1280, 720));
         setLayout(new FlowLayout());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

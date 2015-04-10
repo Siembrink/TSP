@@ -62,7 +62,7 @@ public class Canvas extends JPanel implements MouseListener {
     }
 
     public void paintComponent(Graphics g) {
-        // Set the background
+        // Paint background
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, 501, 501);
 
