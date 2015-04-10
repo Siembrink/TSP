@@ -5,7 +5,7 @@
  * to add them to the simulation.
  */
 
-package Interface.Field;
+package Interface;
 
 import javax.swing.*;
 import java.awt.*;
