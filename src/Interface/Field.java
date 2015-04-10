@@ -32,18 +32,18 @@ public class Field extends JPanel implements MouseListener {
          * the points onto the gridmap.
          */
         // Make a grid of 100x100
-        this.size = 100;
+        this.size = 10000;
         int x = 0;
         int y = 0;
         int rowCount = 1;
-        int count = 1;
+        int count = 0;
 
         // Start making the points and add them to the grid
         while (count < size) {
             // Add a new point to the grid
             grid.add(new Point(count, x, y));
 
-            if (rowCount == 10) {
+            if (rowCount == 100) {
                 y += 10;
                 x = 0;
                 rowCount = 1;
@@ -53,6 +53,7 @@ public class Field extends JPanel implements MouseListener {
             }
 
             count++;
+            System.out.println(count);
         }
     }
 
@@ -102,7 +103,7 @@ public class Field extends JPanel implements MouseListener {
             }
 
             // Draw the grid lines
-            brush.setColor(Color.BLACK);
+            brush.setColor(Color.GRAY);
             brush.drawRect(point.getX(), point.getY(), 10, 10);
         }
     }
