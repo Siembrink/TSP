@@ -66,8 +66,13 @@ public class Frame extends JFrame implements ActionListener {
         add(random);
         random.addActionListener(this);
 
-       add(new Field());
+        add(new Field());
 
+        result = new JLabel("Result : ");
+        add(result);
+
+        displayResult = new JTextArea("hallo");
+        add(displayResult);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
