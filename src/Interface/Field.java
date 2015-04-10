@@ -53,7 +53,6 @@ public class Field extends JPanel implements MouseListener {
             }
 
             count++;
-            System.out.println(count);
         }
     }
 
