@@ -12,10 +12,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-    //
+
 
 public class Frame extends JFrame implements ActionListener {
-
+    //
     private JLabel width;
     private JComboBox selectWidth;
     private String[] arrayWidth = {"100", "1000", "500"};
@@ -53,6 +53,7 @@ public class Frame extends JFrame implements ActionListener {
         stop = new JButton("Stop");
         add(stop);
         stop.addActionListener(this);
+
         enumeration = new JButton("Enumeration");
         add(enumeration);
         enumeration.addActionListener(this);
@@ -65,7 +66,7 @@ public class Frame extends JFrame implements ActionListener {
         add(random);
         random.addActionListener(this);
 
-       // add(new Field());
+       add(new Field());
 
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
