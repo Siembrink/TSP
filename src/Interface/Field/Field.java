@@ -72,17 +72,19 @@ public class Field extends JPanel implements MouseListener {
 
             if (point.getStatus().equals("SELECTED")) {
                 brush.setColor(Color.GREEN);
-            } // Else if other statuses
 
-            brush.fillRect(point.getX() + 1, point.getY() + 1, 10, 10);
+                brush.fillRect(point.getX() + 1, point.getY() + 1, 10, 10);
 
-            for (Point linepoint : grid) {
-                if ((linepoint.getStatus().equals("SELECTED"))) {
-                    brush.setColor(Color.BLUE);
-                    brush.drawLine(point.getX() + 5, point.getY() + 5, linepoint.getX() + 5, linepoint.getY() + 5);
+                // Draw the lines between points
+                for (Point linepoint : grid) {
+                    if ((linepoint.getStatus().equals("SELECTED"))) {
+                        brush.setColor(Color.BLUE);
+                        brush.drawLine(point.getX() + 5, point.getY() + 5, linepoint.getX() + 5, linepoint.getY() + 5);
+                    }
                 }
             }
 
+            // Draw the grid lines
             brush.setColor(Color.BLACK);
             brush.drawRect(point.getX(), point.getY(), 10, 10);
         }

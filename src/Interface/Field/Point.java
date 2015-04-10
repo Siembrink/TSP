@@ -14,6 +14,7 @@ public class Point {
     private int y;
 
     public Point(int index, int x, int y) {
+        // Leave the status at NULL
         this.index = index;
         this.x = x;
         this.y = y;
