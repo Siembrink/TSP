@@ -15,38 +15,84 @@ import java.util.ArrayList;
 
 public class Field extends JPanel implements MouseListener {
 
-    private int amount;
+    private int size;
     private ArrayList<Point> grid;
 
     public Field() {
-        setPreferredSize(new Dimension(701, 701));
+        setPreferredSize(new Dimension(1001, 1001));
         addMouseListener(this);
     }
 
-    public void initializeField(int amount) {
-        // If the amount is an uneven number, make it even
-        if (amount % 2 != 0) {
-            amount += 1;
-        }
-
-        this.amount = amount;
+    public void initializeField() {
+        // Make a grid of 100x100
+        this.size = 100;
         int x = 0;
         int y = 0;
+        int rowCount = 1;
         int count = 1;
 
         // Start making the points and add them to the grid
-        while (count < amount) {
+        while (count < size) {
+            // Add a new point to the grid
             grid.add(new Point(count, x, y));
 
+            if (rowCount == 10) {
+                y += 10;
+                x = 0;
+                rowCount = 1;
+            } else {
+                rowCount++;
+                x += 10;
+            }
 
             count++;
         }
     }
 
+    private void selectPoint(MouseEvent e) {
+        int rootX = e.getX() - (e.getX() % 10);
+        int rootY = e.getY() - (e.getY() % 10);
 
+        for (Point point : grid) {
+            if ((rootX == point.getX()) && (rootY == point.getY())) {
+                point.setStatus("SELECTED");
+            }
+        }
+
+        repaint();
+    }
+
+    public void paintComponent(Graphics brush) {
+        // Set the background
+        brush.setColor(Color.WHITE);
+        brush.fillRect(0, 0, 1001, 1001);
+
+        // Add all the blocks
+        for (Point point : grid) {
+
+            if (point.getStatus().equals("SELECTED")) {
+                brush.setColor(Color.GREEN);
+            } // Else if other statuses
+
+            brush.fillRect(point.getX() + 1, point.getY() + 1, 10, 10);
+
+            for (Point linepoint : grid) {
+                if ((linepoint.getStatus().equals("SELECTED"))) {
+                    brush.setColor(Color.BLUE);
+                    brush.drawLine(point.getX() + 5, point.getY() + 5, linepoint.getX() + 5, linepoint.getY() + 5);
+                }
+            }
+
+            brush.setColor(Color.BLACK);
+            brush.drawRect(point.getX(), point.getY(), 10, 10);
+        }
+    }
+
+
+    /* #------ Abstract Methods ------# */
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        selectPoint(e);
     }
 
     @Override
