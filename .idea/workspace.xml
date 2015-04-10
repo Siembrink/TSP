@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="">
+    <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="Docstrings">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsp.iml" afterPath="$PROJECT_DIR$/tsp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tsp.iws" />
@@ -487,7 +488,7 @@
       <created>1428658181301</created>
       <option name="number" value="Default" />
       <updated>1428658181301</updated>
-      <workItem from="1428658185761" duration="1915000" />
+      <workItem from="1428658185761" duration="2077000" />
     </task>
     <task id="LOCAL-00001" summary="IntelliJ Commit test">
       <created>1428658374744</created>
@@ -561,11 +562,17 @@
       <option name="project" value="LOCAL" />
       <updated>1428660028909</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Docstrings">
+      <created>1428660104964</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1428660104964</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1915000" />
+    <option name="totallyTimeSpent" value="2077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
