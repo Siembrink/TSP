@@ -1,3 +1,9 @@
+/**
+ * -- Point class for the field grid --
+ * One object made by this class represents one point in the
+ * grid map.
+ */
+
 package Interface.Field;
 
 public class Point {
