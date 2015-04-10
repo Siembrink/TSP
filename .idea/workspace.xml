@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="Added grid classes">
+    <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="Added grid classes &amp; Docstrings">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tsp.iws" />
@@ -17,7 +17,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="C:\Users\Wessel\Google Drive\TSP\tsp" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -512,7 +512,7 @@
       <created>1428658181301</created>
       <option name="number" value="Default" />
       <updated>1428658181301</updated>
-      <workItem from="1428658185761" duration="4688000" />
+      <workItem from="1428658185761" duration="4722000" />
     </task>
     <task id="LOCAL-00001" summary="IntelliJ Commit test">
       <created>1428658374744</created>
@@ -616,11 +616,17 @@
       <option name="project" value="LOCAL" />
       <updated>1428662835361</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added grid classes &amp; Docstrings">
+      <created>1428662887690</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1428662887690</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4688000" />
+    <option name="totallyTimeSpent" value="4722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="960" height="1050" extended-state="0" />
@@ -667,7 +673,8 @@
     <MESSAGE value="Docstrings" />
     <MESSAGE value="Refractor" />
     <MESSAGE value="Added grid classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added grid classes" />
+    <MESSAGE value="Added grid classes &amp; Docstrings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added grid classes &amp; Docstrings" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
