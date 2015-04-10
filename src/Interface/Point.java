@@ -14,9 +14,29 @@ public class Point {
     private int y;
 
     public Point(int index, int x, int y) {
+        // Leave the status at NULL
         this.index = index;
         this.x = x;
         this.y = y;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 }
