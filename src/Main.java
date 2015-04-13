@@ -1,3 +1,8 @@
+/**
+ * -- Main function of the program --
+ * This is where the magic all starts.
+ */
+
 import Interface.Frame;
 
 public class Main {
@@ -6,7 +11,6 @@ public class Main {
 
         Frame simFrame = new Frame();
         System.out.println(simFrame);
-
 
     }
 }

@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 
 
 public class Frame extends JFrame implements ActionListener {
-    //
+
     private JLabel width;
     private JComboBox selectWidth;
     private String[] arrayWidth = {"100", "1000", "500"};
@@ -35,7 +35,7 @@ public class Frame extends JFrame implements ActionListener {
 
         setTitle("TSP Simulation");
         setLayout(new FlowLayout());
-        setSize(1000, 1000);
+        setSize(1020, 1200);
 
         width = new JLabel("Width : ");
         add(width);
