@@ -107,7 +107,6 @@ public class Field extends JPanel implements MouseListener {
         }
     }
 
-
     /* #------ Abstract Methods ------# */
     @Override
     public void mouseClicked(MouseEvent e) {

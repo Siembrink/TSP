@@ -39,4 +39,12 @@ public class Point {
     public int getY() {
         return y;
     }
+
+    public double calculateDistance(Point newPoint) {
+        double distance = Math.sqrt(
+                ((newPoint.getX() - this.getX()) * (newPoint.getX() - this.getX())) +
+                        ((newPoint.getY() - this.getY()) * (newPoint.getY() * this.getY()))
+        );
+        return distance;
+    }
 }

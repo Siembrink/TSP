@@ -62,7 +62,7 @@ public class Frame extends JFrame implements ActionListener {
         add(greedy);
         greedy.addActionListener(this);
 
-        random = new JButton("Random");
+        random = new JButton("RandomGreedy");
         add(random);
         random.addActionListener(this);
 
@@ -74,7 +74,7 @@ public class Frame extends JFrame implements ActionListener {
         displayResult = new JTextArea("hallo");
         add(displayResult);
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         setVisible(true);
 

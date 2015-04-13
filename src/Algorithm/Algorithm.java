@@ -17,15 +17,19 @@ public abstract class Algorithm {
      * are selected, so the ones that matter to the
      * simulation.
      */
-    private ArrayList<Point> grid;
+    public static ArrayList<Point> grid;
+    public static Point initial;
 
-    public Algorithm(ArrayList<Point> grid) {
+    public Algorithm(ArrayList<Point> field) {
         // Add all selected points to the grid
-        for (Point point : grid) {
+        for (Point point : field) {
             if (point.getStatus().equals("SELECTED")) {
-                this.grid.add(point);
+                grid.add(point);
             }
         }
+
+        // Create a new point in the bottom right corner
+        initial = new Point(9999, 1000, 1000);
     }
 
     // Getters and setters
@@ -34,6 +38,7 @@ public abstract class Algorithm {
     }
 
     // Abstract methods
+    public abstract void calculate();
     public abstract Result getResult();
 
 }
