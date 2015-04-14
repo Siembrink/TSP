@@ -85,6 +85,14 @@ public class Field extends JPanel implements MouseListener {
         }
     }
 
+    public void resetField(int columns) {
+        this.columns = columns;
+        grid = null;
+        grid = new ArrayList<Point>();
+        initializeField();
+        repaint();
+    }
+
     private void selectPoint(MouseEvent e) {
         /**
          * This method gets the block coordinates of the point
