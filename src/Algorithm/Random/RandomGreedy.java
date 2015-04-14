@@ -1,7 +1,6 @@
 package Algorithm.Random;
 
-import Algorithm.Algorithm;
-import Algorithm.Result;
+import Algorithm.*;
 import Interface.Point;
 
 import java.util.ArrayList;
@@ -31,8 +30,7 @@ public class RandomGreedy extends Algorithm {
     }
 
     @Override
-    public Result getResult() {
-        Result result = new Result();
-        return result;
+    public void getResult() {
+
     }
 }

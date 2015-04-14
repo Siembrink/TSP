@@ -39,6 +39,6 @@ public abstract class Algorithm {
 
     // Abstract methods
     public abstract void calculate();
-    public abstract Result getResult();
+    public abstract void getResult();
 
 }

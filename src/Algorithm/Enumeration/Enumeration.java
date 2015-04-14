@@ -12,8 +12,12 @@ public class Enumeration extends Algorithm{
     }
 
     @Override
-    public Result getResult() {
-        Result result = new Result();
-        return result;
+    public void calculate() {
+
+    }
+
+    @Override
+    public void getResult() {
+
     }
 }

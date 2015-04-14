@@ -7,8 +7,8 @@
 
 package Algorithm.Greedy;
 
-import Algorithm.Algorithm;
-import Algorithm.Result;
+import Algorithm.*;
+
 import Interface.Point;
 
 import java.util.ArrayList;
@@ -48,9 +48,7 @@ public class Greedy extends Algorithm {
     }
 
     @Override
-    public Result getResult() {
+    public void getResult() {
 
-        Result result = new Result();
-        return result;
     }
 }
