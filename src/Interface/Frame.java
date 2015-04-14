@@ -1,8 +1,5 @@
 /**
  * -- This is a frame for the TSP simulation --
- * <p>
- * <p>
- * <p>
  * -- created on 10-4-2015 by Simon Brink --
  */
 package Interface;
@@ -31,11 +28,12 @@ public class Frame extends JFrame implements ActionListener {
     private JButton greedy;
     private JButton random;
 
+    /** In here we create the frame in the constructor, the constructor does not need any parameters.**/
     public Frame() {
 
         setTitle("TSP Simulation");
         setLayout(new FlowLayout());
-        setSize(1020, 1200);
+        setSize(1020, 1200); // Size of the main frame
 
         width = new JLabel("Width : ");
         add(width);
@@ -65,15 +63,17 @@ public class Frame extends JFrame implements ActionListener {
         random = new JButton("RandomGreedy");
         add(random);
         random.addActionListener(this);
-
-        add(new Field());
-
         result = new JLabel("Result : ");
         add(result);
 
         displayResult = new JTextArea("hallo");
         add(displayResult);
+        add(new Field(10));
 
+
+
+
+        setLocationRelativeTo(null); // Centers
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         setVisible(true);
