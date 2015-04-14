@@ -15,8 +15,9 @@ import java.util.ArrayList;
 
 public class Field extends JPanel implements MouseListener {
 
-    private int columns;
     private ArrayList<Point> grid;
+    private int columns;
+    private int pointSize;
 
     public Field(int columns) {
         this.columns = columns;
@@ -39,7 +40,7 @@ public class Field extends JPanel implements MouseListener {
          // 100columns ->  10px wide  10px high | 10000 points
          */
 
-        int pointSize = 10;
+        pointSize = 10;
         int maxRow = 100;
         int gridSize = 10000;
         int rowCount = 1;
@@ -90,8 +91,8 @@ public class Field extends JPanel implements MouseListener {
          * the user clicks on, so it can later be used to paint
          * the graphic another color.
          */
-        int rootX = e.getX() - (e.getX() % 10);
-        int rootY = e.getY() - (e.getY() % 10);
+        int rootX = e.getX() - (e.getX() % pointSize);
+        int rootY = e.getY() - (e.getY() % pointSize);
 
         for (Point point : grid) {
             if ((rootX == point.getX()) && (rootY == point.getY())) {
@@ -112,26 +113,28 @@ public class Field extends JPanel implements MouseListener {
         brush.setColor(Color.WHITE);
         brush.fillRect(0, 0, 1001, 1001);
 
+        int halfPointSize = pointSize / 2;
+
         // Add all the blocks
         for (Point point : grid) {
 
             if (point.getStatus().equals("SELECTED")) {
                 brush.setColor(Color.GREEN);
 
-                brush.fillRect(point.getX() + 1, point.getY() + 1, 10, 10);
+                brush.fillRect(point.getX() + 1, point.getY() + 1, pointSize, pointSize);
 
                 // Draw the lines between points
                 for (Point linepoint : grid) {
                     if ((linepoint.getStatus().equals("SELECTED"))) {
                         brush.setColor(Color.BLUE);
-                        brush.drawLine(point.getX() + 5, point.getY() + 5, linepoint.getX() + 5, linepoint.getY() + 5);
+                        brush.drawLine(point.getX() + halfPointSize, point.getY() + halfPointSize, linepoint.getX() + halfPointSize, linepoint.getY() + halfPointSize);
                     }
                 }
             }
 
             // Draw the grid lines
             brush.setColor(Color.GRAY);
-            brush.drawRect(point.getX(), point.getY(), 10, 10);
+            brush.drawRect(point.getX(), point.getY(), pointSize, pointSize);
         }
     }
 
