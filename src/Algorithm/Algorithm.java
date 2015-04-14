@@ -19,6 +19,7 @@ public abstract class Algorithm {
      */
     public static ArrayList<Point> grid;
     public static Point initial;
+    public static int fieldSize;
 
     public Algorithm(ArrayList<Point> field) {
         // Add all selected points to the grid
@@ -29,7 +30,8 @@ public abstract class Algorithm {
         }
 
         // Create a new point in the bottom right corner
-        initial = new Point(9999, 1000, 1000);
+        initial = new Point(201285, 1000, 1000);
+        fieldSize = 25;
     }
 
     // Getters and setters

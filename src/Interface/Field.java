@@ -18,12 +18,17 @@ public class Field extends JPanel implements MouseListener {
     private ArrayList<Point> grid;
     private int columns;
     private int pointSize;
+    private boolean drawLines;
 
     public Field(int columns) {
         this.columns = columns;
         grid = new ArrayList<Point>();
+
         setPreferredSize(new Dimension(1001, 1001));
         addMouseListener(this);
+
+        this.drawLines = true;
+
         initializeField();
     }
 
@@ -132,10 +137,12 @@ public class Field extends JPanel implements MouseListener {
                 brush.fillRect(point.getX() + 1, point.getY() + 1, pointSize, pointSize);
 
                 // Draw the lines between points
-                for (Point linepoint : grid) {
-                    if ((linepoint.getStatus().equals("SELECTED"))) {
-                        brush.setColor(Color.BLUE);
-                        brush.drawLine(point.getX() + halfPointSize, point.getY() + halfPointSize, linepoint.getX() + halfPointSize, linepoint.getY() + halfPointSize);
+                if (drawLines) {
+                    for (Point linepoint : grid) {
+                        if ((linepoint.getStatus().equals("SELECTED"))) {
+                            brush.setColor(Color.BLUE);
+                            brush.drawLine(point.getX() + halfPointSize, point.getY() + halfPointSize, linepoint.getX() + halfPointSize, linepoint.getY() + halfPointSize);
+                        }
                     }
                 }
             }

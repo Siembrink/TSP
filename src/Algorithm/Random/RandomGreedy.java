@@ -10,6 +10,7 @@ public class RandomGreedy extends Algorithm {
 
     private Random randomGenerator;
     private double totalDistance;
+    private int totalSteps;
 
     public RandomGreedy(ArrayList<Point> grid) {
         super(grid);
@@ -31,6 +32,6 @@ public class RandomGreedy extends Algorithm {
 
     @Override
     public void getResult() {
-
+        Result result = new Result("Random", totalDistance, totalSteps, fieldSize);
     }
 }
