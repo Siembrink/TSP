@@ -15,11 +15,13 @@ public class Frame extends JFrame implements ActionListener {
 
     private JLabel width;
     private JComboBox selectWidth;
-    private String[] arrayWidth = {"100", "1000", "500"};
+    private Integer[] arrayWidth = {10, 25, 50, 100};
 
     private JButton reset;
     private JButton start;
     private JButton stop;
+    private Field field;
+    private int selectedWidth;
 
     private JLabel result;
     private JTextArea displayResult;
@@ -40,17 +42,13 @@ public class Frame extends JFrame implements ActionListener {
         selectWidth = new JComboBox(arrayWidth);
         add(selectWidth);
 
-        reset = new JButton("Reset");
-        add(reset);
-        reset.addActionListener(this);
+
 
         start = new JButton("Start");
         add(start);
         start.addActionListener(this);
 
-        stop = new JButton("Stop");
-        add(stop);
-        stop.addActionListener(this);
+
 
         enumeration = new JButton("Enumeration");
         add(enumeration);
@@ -68,7 +66,8 @@ public class Frame extends JFrame implements ActionListener {
 
         displayResult = new JTextArea("hallo");
         add(displayResult);
-        add(new Field(10));
+        field = new Field(10);
+        add(field);
 
 
 
@@ -81,8 +80,23 @@ public class Frame extends JFrame implements ActionListener {
 
     }
 
+    public void getWidth(int Index) {
+        if(Index == 0) {
+            field.resetField(10);
+        } else if(Index == 1) {
+            field.resetField(25);
+        } else if (Index == 2) {
+            field.resetField(50);
+        } else {
+            field.resetField(100);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-
+      if (e.getSource() == start) {
+            selectedWidth = selectWidth.getSelectedIndex();
+            this.getWidth(selectedWidth);
+        }
     }
 }
