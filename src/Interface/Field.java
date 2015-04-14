@@ -15,10 +15,11 @@ import java.util.ArrayList;
 
 public class Field extends JPanel implements MouseListener {
 
-    private int size;
+    private int columns;
     private ArrayList<Point> grid;
 
-    public Field() {
+    public Field(int columns) {
+        this.columns = columns;
         grid = new ArrayList<Point>();
         setPreferredSize(new Dimension(1001, 1001));
         addMouseListener(this);
@@ -30,26 +31,53 @@ public class Field extends JPanel implements MouseListener {
          * This method creates all the points of the grid and
          * generates their coordinates, which are used to draw
          * the points onto the gridmap.
+         *
+         *
+         // 10 columns -> 100px wide 100px high | 100 points
+         // 25 columns ->  40px wide  40px high | 625 points
+         // 50 columns ->  20px wide  20px high | 2500 points
+         // 100columns ->  10px wide  10px high | 10000 points
          */
-        // Make a grid of 100x100
-        this.size = 10000;
+
+        int pointSize = 10;
+        int maxRow = 100;
+        int gridSize = 10000;
+        int rowCount = 1;
+
+        if (columns == 10) {
+            pointSize = 100;
+            maxRow = 10;
+            gridSize = 100;
+        } else if (columns == 25) {
+            pointSize = 40;
+            maxRow = 25;
+            gridSize = 625;
+        } else if (columns == 50) {
+            pointSize = 20;
+            maxRow = 50;
+            gridSize = 2500;
+        } else if (columns == 100) {
+            pointSize = 10;
+            maxRow = 100;
+            gridSize = 10000;
+        }
+
         int x = 0;
         int y = 0;
-        int rowCount = 1;
         int count = 0;
 
         // Start making the points and add them to the grid
-        while (count < size) {
+        while (count < gridSize) {
             // Add a new point to the grid
             grid.add(new Point(count, x, y));
 
-            if (rowCount == 100) {
-                y += 10;
+            if (rowCount == maxRow) {
+                y += pointSize;
                 x = 0;
                 rowCount = 1;
             } else {
                 rowCount++;
-                x += 10;
+                x += pointSize;
             }
 
             count++;
