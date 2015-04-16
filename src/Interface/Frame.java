@@ -65,7 +65,7 @@ public class Frame extends JFrame implements ActionListener {
         result = new JLabel("SimResult : ");
         add(result);
 
-        displayResult = new JTextArea("hallo");
+        displayResult = new JTextArea("Distance : Points : " );
         add(displayResult);
         field = new Field(10);
         add(field);
@@ -102,7 +102,8 @@ public class Frame extends JFrame implements ActionListener {
             RandomGreedy algorithm = new RandomGreedy(field.getGrid());
             algorithm.getResult();
         } else if(e.getSource() == greedy) {
-
+            Greedy algorithm1 = new Greedy(field.getGrid());
+            algorithm1.getResult();
         } else if (e.getSource() == enumeration) {
 
         }
