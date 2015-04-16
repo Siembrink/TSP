@@ -21,16 +21,11 @@ public class Frame extends JFrame implements ActionListener {
     private JLabel width;
     private JComboBox selectWidth;
     private Integer[] arrayWidth = {10, 25, 50, 100};
-
-    private JButton reset;
-    private JButton start;
-    private JButton stop;
+    private JButton change;
     private Field field;
     private int selectedWidth;
-
     private JLabel result;
     private JTextArea displayResult;
-
     private JButton enumeration;
     private JButton greedy;
     private JButton random;
@@ -42,16 +37,17 @@ public class Frame extends JFrame implements ActionListener {
         setLayout(new FlowLayout());
         setSize(1020, 1200); // Size of the main frame
 
+        /** Option to change the width of Field **/
         width = new JLabel("Width : ");
         add(width);
         selectWidth = new JComboBox(arrayWidth);
         add(selectWidth);
 
 
-
-        start = new JButton("Start");
-        add(start);
-        start.addActionListener(this);
+        /** Change width **/
+        change = new JButton("Change");
+        add(change);
+        change.addActionListener(this);
 
 
 
@@ -99,12 +95,16 @@ public class Frame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == start) {
+        if (e.getSource() == change) {
             selectedWidth = selectWidth.getSelectedIndex();
             this.getWidth(selectedWidth);
         } else if (e.getSource() == random) {
             RandomGreedy algorithm = new RandomGreedy(field.getGrid());
             algorithm.getResult();
+        } else if(e.getSource() == greedy) {
+
+        } else if (e.getSource() == enumeration) {
+
         }
     }
 }
