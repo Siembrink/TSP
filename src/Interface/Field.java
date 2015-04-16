@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class Field extends JPanel implements MouseListener {
 
     private ArrayList<Point> grid;
+    private ArrayList<Line> lines;
     private int columns;
     private int pointSize;
     private boolean drawLines;
@@ -23,11 +24,12 @@ public class Field extends JPanel implements MouseListener {
     public Field(int columns) {
         this.columns = columns;
         grid = new ArrayList<Point>();
+        lines = new ArrayList<Line>();
 
         setPreferredSize(new Dimension(1001, 1001));
         addMouseListener(this);
 
-        this.drawLines = true;
+        this.drawLines = false;
 
         initializeField();
     }
@@ -128,6 +130,13 @@ public class Field extends JPanel implements MouseListener {
 
         int halfPointSize = pointSize / 2;
 
+        boolean gridNumbers;
+        if (grid.size() < 1000) {
+            gridNumbers = true;
+        } else {
+            gridNumbers = false;
+        }
+
         // Add all the blocks
         for (Point point : grid) {
 
@@ -136,7 +145,7 @@ public class Field extends JPanel implements MouseListener {
 
                 brush.fillRect(point.getX() + 1, point.getY() + 1, pointSize, pointSize);
 
-                // Draw the lines between points
+                // Draw the lines between points provided you want to
                 if (drawLines) {
                     for (Point linepoint : grid) {
                         if ((linepoint.getStatus().equals("SELECTED"))) {
@@ -145,14 +154,40 @@ public class Field extends JPanel implements MouseListener {
                         }
                     }
                 }
+
+                // Draw the simulation lines indicating the route
+                for (Line line : lines) {
+                    System.out.println("\nDrawing line...");
+                    brush.setColor(Color.BLUE);
+                    int x1 = line.getPoint1().getX() + halfPointSize;
+                    int y1 = line.getPoint1().getY() + halfPointSize;
+                    int x2 = line.getPoint2().getX() + halfPointSize;
+                    int y2 = line.getPoint2().getY() + halfPointSize;
+                    brush.drawLine(x1, y1, x2, y2);
+                }
+            }
+
+            brush.setColor(Color.GRAY);
+
+            if (gridNumbers) {
+                if (point.getIndex() == 0) {
+                    brush.drawString("0", point.getX() + 5, point.getY() + 15);
+                } else {
+                    brush.drawString(Integer.toString(point.getIndex()), point.getX() + 5, point.getY() + 15);
+                }
             }
 
             // Draw the grid lines
-            brush.setColor(Color.GRAY);
             brush.drawRect(point.getX(), point.getY(), pointSize, pointSize);
         }
     }
 
+    public void drawLine(Point point1, Point point2) {
+        lines.add(new Line(point1, point2));
+        repaint();
+    }
+
+    /* #------ Getters and Setters ------# */
     public ArrayList<Point> getGrid() {
         return grid;
     }

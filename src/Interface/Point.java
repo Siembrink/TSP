@@ -48,10 +48,25 @@ public class Point {
     }
 
     public double calculateDistance(Point newPoint) {
-        double distance = Math.sqrt(
-                ((newPoint.getX() - this.getX()) * (newPoint.getX() - this.getX())) +
-                        ((newPoint.getY() - this.getY()) * (newPoint.getY() * this.getY()))
-        );
-        return distance;
+        if (this == newPoint) {
+            return 0;
+        } else {
+            double distance = Math.sqrt(
+                    ((newPoint.getX() - this.getX()) * (newPoint.getX() - this.getX())) +
+                            ((newPoint.getY() - this.getY()) * (newPoint.getY() * this.getY()))
+            );
+            return distance;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "index=" + index +
+                ", status='" + status + '\'' +
+                ", x=" + x +
+                ", y=" + y +
+                ", selected=" + selected +
+                '}';
     }
 }

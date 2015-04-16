@@ -32,6 +32,7 @@ public abstract class Algorithm {
 
         // Create a new point in the bottom right corner
         initial = new Point(201285, 1000, 1000);
+        initial.setStatus("SELECTED");
         fieldSize = 25;
     }
 
