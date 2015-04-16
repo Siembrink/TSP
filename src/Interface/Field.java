@@ -153,6 +153,10 @@ public class Field extends JPanel implements MouseListener {
         }
     }
 
+    public ArrayList<Point> getGrid() {
+        return grid;
+    }
+
     /* #------ Abstract Methods ------# */
     @Override
     public void mouseClicked(MouseEvent e) {

@@ -12,10 +12,12 @@ public class Point {
     private String status;
     private int x;
     private int y;
+    private boolean selected;
 
     public Point(int index, int x, int y) {
         this.index = index;
         this.status = "";
+        selected = false;
         this.x = x;
         this.y = y;
     }
@@ -26,8 +28,13 @@ public class Point {
 
     public void setStatus(String status) {
         this.status = status;
+        this.selected = true;
     }
 
+    public boolean getSelected() {
+        return selected;
+    }
+    
     public int getIndex() {
         return index;
     }

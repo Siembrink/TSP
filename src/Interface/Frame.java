@@ -5,6 +5,11 @@
 package Interface;
 
 
+import Algorithm.*;
+import Algorithm.Enumeration.Enumeration;
+import Algorithm.Greedy.Greedy;
+import Algorithm.Random.RandomGreedy;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -61,7 +66,7 @@ public class Frame extends JFrame implements ActionListener {
         random = new JButton("RandomGreedy");
         add(random);
         random.addActionListener(this);
-        result = new JLabel("Result : ");
+        result = new JLabel("SimResult : ");
         add(result);
 
         displayResult = new JTextArea("hallo");
@@ -94,9 +99,12 @@ public class Frame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-      if (e.getSource() == start) {
+        if (e.getSource() == start) {
             selectedWidth = selectWidth.getSelectedIndex();
             this.getWidth(selectedWidth);
+        } else if (e.getSource() == random) {
+            RandomGreedy algorithm = new RandomGreedy(field.getGrid());
+            algorithm.getResult();
         }
     }
 }

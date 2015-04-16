@@ -14,24 +14,45 @@ public class RandomGreedy extends Algorithm {
 
     public RandomGreedy(ArrayList<Point> grid) {
         super(grid);
+        randomGenerator = new Random();
         calculate();
     }
 
     @Override
     public void calculate() {
-        for (Point point : grid) {
-            grid.remove(point);
+
+        int arrayLength = grid.size();
+        int loopCounter = 0;
+        totalDistance = initial.calculateDistance(grid.get(0));
+        Point current = grid.get(0);
+
+
+        while (loopCounter < arrayLength) {
+            System.out.println(grid.toString());
+            System.out.println("Loop begin\n------------\nCount: " + loopCounter);
+            System.out.println("Current point: " + current.toString());
+            grid.remove(current);
 
             int index = randomGenerator.nextInt(grid.size());
-            Point randomPoint = grid.get(index);
+            System.out.println("Random number: " + index);
+            Point random = grid.get(index);
+            totalDistance += current.calculateDistance(random);
+            System.out.println("Random point: " + random.toString());
 
-            totalDistance += point.calculateDistance(randomPoint);
-            grid.remove(randomPoint);
+            System.out.println("Total distance: " + totalDistance);
+
+            current = random;
+
+            System.out.println("Current changed: " + current.toString());
+
+            loopCounter++;
         }
+        System.out.println("End sim");
     }
 
     @Override
     public void getResult() {
-        Result result = new Result("Random", totalDistance, totalSteps, fieldSize);
+        SimResult result = new SimResult("Random", totalDistance, totalSteps, 25);
+        System.out.println(result.toString());
     }
 }

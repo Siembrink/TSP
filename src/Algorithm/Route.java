@@ -5,12 +5,16 @@
 
 package Algorithm;
 
+import Interface.Field;
+import Interface.Point;
+
+import java.util.ArrayList;
+
 public class Route {
 
-    private int route[];
+    private ArrayList<Point> route;
 
     public Route() {
-
     }
 
 }

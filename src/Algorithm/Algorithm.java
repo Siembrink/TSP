@@ -22,9 +22,10 @@ public abstract class Algorithm {
     public static int fieldSize;
 
     public Algorithm(ArrayList<Point> field) {
+        grid = new ArrayList<>();
         // Add all selected points to the grid
         for (Point point : field) {
-            if (point.getStatus().equals("SELECTED")) {
+            if (point.getSelected()) {
                 grid.add(point);
             }
         }
