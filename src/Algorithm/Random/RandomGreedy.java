@@ -29,7 +29,7 @@ public class RandomGreedy extends Algorithm {
 
         while (loopCounter < arrayLength) {
             System.out.println(grid.toString());
-            System.out.println("Loop begin\n------------\nCount: " + loopCounter);
+            System.out.println("Loop begin | LoopCount: " + loopCounter + "\n------------\nCount: " + loopCounter);
             System.out.println("Current point: " + current.toString());
             grid.remove(current);
 
