@@ -5,8 +5,8 @@
 package Interface;
 
 
-import Algorithm.Greedy.Greedy;
-import Algorithm.Random.RandomGreedy;
+import Algorithm.Algorithms.Greedy;
+import Algorithm.Algorithms.RandomGreedy;
 
 import javax.swing.*;
 import java.awt.*;
