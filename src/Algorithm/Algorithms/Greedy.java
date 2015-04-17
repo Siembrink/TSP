@@ -53,7 +53,7 @@ public class Greedy extends Algorithm {
             current = closest;
 
 
-            field.drawLine(current, closest);
+            field.drawLine(current, closest, count);
 
             closestDistance = 999999;
             if (grid.size() == 0) {

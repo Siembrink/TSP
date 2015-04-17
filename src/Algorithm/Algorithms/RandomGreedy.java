@@ -39,7 +39,7 @@ public class RandomGreedy extends Algorithm {
             System.out.println("Standing on Index: " + current.getIndex() + ",  X=" + current.getX() +  ", Y=" + current.getY());
             System.out.println("Loop count: " + loopCounter);
 
-            field.drawLine(test1, current);
+            field.drawLine(test1, current, loopCounter);
             test1 = current;
             grid.remove(current);
 

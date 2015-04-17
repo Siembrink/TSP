@@ -29,7 +29,7 @@ public class Field extends JPanel implements MouseListener {
         setPreferredSize(new Dimension(1001, 1001));
         addMouseListener(this);
 
-        this.drawLines = true;
+        this.drawLines = false;
 
         initializeField();
     }
@@ -94,7 +94,7 @@ public class Field extends JPanel implements MouseListener {
 
     public void resetField(int columns) {
         this.columns = columns;
-        grid = null;
+        lines = new ArrayList<Line>();
         grid = new ArrayList<Point>();
         initializeField();
         repaint();
@@ -157,13 +157,13 @@ public class Field extends JPanel implements MouseListener {
 
                 // Draw the simulation lines indicating the route
                 for (Line line : lines) {
-
                     brush.setColor(Color.BLUE);
                     int x1 = line.getPoint1().getX() + halfPointSize;
                     int y1 = line.getPoint1().getY() + halfPointSize;
                     int x2 = line.getPoint2().getX() + halfPointSize;
                     int y2 = line.getPoint2().getY() + halfPointSize;
                     brush.drawLine(x1, y1, x2, y2);
+                    brush.drawString(Integer.toString(line.getNumber()+1), x2-10, y2-10);
                 }
             }
 
@@ -182,8 +182,8 @@ public class Field extends JPanel implements MouseListener {
         }
     }
 
-    public void drawLine(Point point1, Point point2) {
-        lines.add(new Line(point1, point2));
+    public void drawLine(Point point1, Point point2, int number) {
+        lines.add(new Line(point1, point2, number));
         repaint();
     }
 
