@@ -5,6 +5,7 @@ import Algorithm.SimResult;
 import Interface.Field;
 import Interface.Point;
 
+import javax.swing.*;
 import java.util.Random;
 
 public class RandomGreedy extends Algorithm {
@@ -12,7 +13,7 @@ public class RandomGreedy extends Algorithm {
     private Random randomGenerator;
     private Field field;
     private double totalDistance;
-    private int totalSteps;
+ //   private int totalSteps;
 
     public RandomGreedy(Field field) {
         super(field.getGrid());
@@ -26,7 +27,7 @@ public class RandomGreedy extends Algorithm {
 
         int arrayLength = grid.size();
         int loopCounter = 0;
-        Point test1 = initial;
+        Point lastPoint = initial;
 
         totalDistance = initial.calculateDistance(grid.get(0));
 
@@ -36,23 +37,34 @@ public class RandomGreedy extends Algorithm {
         while (loopCounter < arrayLength) {
             Point current = grid.get(randomGenerator.nextInt(grid.size()));
 
-            System.out.println("Standing on Index: " + current.getIndex() + ",  X=" + current.getX() +  ", Y=" + current.getY());
+            System.out.println("Standing on Index: " + current.getIndex() + ",  X=" + current.getX() + ", Y=" + current.getY());
             System.out.println("Loop count: " + loopCounter);
 
-            field.drawLine(test1, current, loopCounter);
-            test1 = current;
+            field.drawLine(lastPoint, current, loopCounter);
+            double distance = lastPoint.calculateDistance(current);
+            System.out.println("Distance Between Last and Current: " + distance);
+            totalDistance += distance;
+            System.out.println("New distance: " + totalDistance);
+
+            lastPoint = current;
             grid.remove(current);
 
-            System.out.println("\n");
             loopCounter++;
 
         }
-        System.out.println("------End Simulation------");
+        System.out.println("------End Simulation------\n");
+
+        System.out.println("------Results------");
+        System.out.println("Algorithm: RandomGreedy");
+        System.out.println("Total Distance: " + totalDistance);
+
     }
 
     @Override
     public void getResult() {
-        SimResult result = new SimResult("Random", totalDistance, totalSteps, 25);
-        System.out.println(result.toString());
+//        SimResult result = new SimResult("Random", totalDistance, totalSteps, 25);
+//        System.out.println(result.toString());
+
+
     }
 }

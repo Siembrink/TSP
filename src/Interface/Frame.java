@@ -98,6 +98,8 @@ public class Frame extends JFrame implements ActionListener {
             this.getWidth(selectedWidth);
         } else if (e.getSource() == random) {
             RandomGreedy algorithm = new RandomGreedy(field);
+//            Result result = new Result();
+//            result.setVisible(true);
             algorithm.getResult();
         } else if(e.getSource() == greedy) {
             Greedy algorithm = new Greedy(field);
