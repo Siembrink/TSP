@@ -9,7 +9,6 @@ package Algorithm.Greedy;
 
 import Algorithm.*;
 
-import Interface.Field;
 import Interface.Point;
 
 import java.util.ArrayList;
@@ -18,71 +17,38 @@ public class Greedy extends Algorithm {
 
     private Point current;
     private Point closest;
-    private Field field;
-    private double totalDistance;
+    private int totalDistance;
 
-    public Greedy(Field field) {
-        super(field.getGrid());
-        this.field = field;
+    public Greedy(ArrayList<Point> grid) {
+        super(grid);
         current = initial;
         totalDistance = 0;
+        closest = new Point(92818251, 10295, 10295);
         calculate();
     }
 
     @Override
     public void calculate() {
-        double closestDistance = 999999999;
-
-        boolean loop = true;
-        int count = 0;
-        int gridSize = grid.size();
-
-
-        while (loop) {
-            if (!(current.getIndex() == 201285)) {
-                grid.remove(current);
-            }
-
-            for (Point point : grid) {
-                System.out.println(current.calculateDistance(point));
-                if (current.calculateDistance(point) <= closestDistance) {
-                    closestDistance = current.calculateDistance(point);
-                    closest = point;
+        for (Point point : grid) {
+            // Calculate the closest point from the current one
+            for (Point newPoint : grid) {
+                double distance = point.calculateDistance(newPoint);
+                if (distance < point.calculateDistance(closest)) {
+                    closest = newPoint;
                 }
             }
-            System.out.println("LOOP " + count + "\nCURRENT: " + current.toString() + "\nNEW: " + closest.toString());
 
-            totalDistance += current.calculateDistance(closest);
-            current = closest;
+            // Calculate distance from current to new
+            totalDistance += point.calculateDistance(closest);
 
-
-            field.drawLine(current, closest);
-
-            closestDistance = 999999;
-            if (grid.size() == 0) {
-                System.out.println("LOOP OVER");
-                break;
-            }
-
-            if (count != gridSize) {
-                count++;
-            } else {
-                break;
-            }
+            // Set the current point to the new point
+            current = point;
+            grid.remove(point);
         }
     }
 
     @Override
     public void getResult() {
-        System.out.println(this.toString());
-    }
 
-    @Override
-    public String toString() {
-        return "Greedy{" +
-                "current=" + current +
-                ", closest=" + closest +
-                ", totalDistance=" + totalDistance +
-                '}';
     }
 }

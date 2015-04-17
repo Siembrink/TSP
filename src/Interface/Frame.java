@@ -99,11 +99,10 @@ public class Frame extends JFrame implements ActionListener {
             selectedWidth = selectWidth.getSelectedIndex();
             this.getWidth(selectedWidth);
         } else if (e.getSource() == random) {
-            RandomGreedy algorithm = new RandomGreedy(field);
+            RandomGreedy algorithm = new RandomGreedy(field.getGrid());
             algorithm.getResult();
         } else if(e.getSource() == greedy) {
-            Greedy algorithm = new Greedy(field);
-            algorithm.getResult();
+
         } else if (e.getSource() == enumeration) {
 
         }
