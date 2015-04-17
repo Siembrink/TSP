@@ -29,7 +29,7 @@ public class Field extends JPanel implements MouseListener {
         setPreferredSize(new Dimension(1001, 1001));
         addMouseListener(this);
 
-        this.drawLines = false;
+        this.drawLines = true;
 
         initializeField();
     }
