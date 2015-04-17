@@ -157,7 +157,7 @@ public class Field extends JPanel implements MouseListener {
 
                 // Draw the simulation lines indicating the route
                 for (Line line : lines) {
-                    System.out.println("\nDrawing line...");
+
                     brush.setColor(Color.BLUE);
                     int x1 = line.getPoint1().getX() + halfPointSize;
                     int y1 = line.getPoint1().getY() + halfPointSize;

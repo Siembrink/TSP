@@ -26,23 +26,25 @@ public class RandomGreedy extends Algorithm {
 
         int arrayLength = grid.size();
         int loopCounter = 0;
-        int indexPoint = 0;
+        Point test1 = initial;
+
         totalDistance = initial.calculateDistance(grid.get(0));
 
 
         System.out.println("------Begin Simulation------");
         System.out.println("Selected Points: "+ arrayLength);
         while (loopCounter < arrayLength) {
-            Point current = grid.get(indexPoint);
-            randomGenerator.nextInt(arrayLength);
+            Point current = grid.get(randomGenerator.nextInt(grid.size()));
 
-            System.out.println("Standing on Index: " + randomGenerator.toString());
-            System.out.println(current);
+            System.out.println("Standing on Index: " + current.getIndex() + ",  X=" + current.getX() +  ", Y=" + current.getY());
             System.out.println("Loop count: " + loopCounter);
+
+            field.drawLine(test1, current);
+            test1 = current;
+            grid.remove(current);
 
             System.out.println("\n");
             loopCounter++;
-            indexPoint++;
 
         }
         System.out.println("------End Simulation------");
