@@ -23,6 +23,7 @@ public abstract class Algorithm {
 
     public Algorithm(ArrayList<Point> field) {
         grid = new ArrayList<>();
+
         // Add all selected points to the grid
         for (Point point : field) {
             if (point.getSelected()) {
