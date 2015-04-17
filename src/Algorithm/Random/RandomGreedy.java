@@ -1,19 +1,22 @@
 package Algorithm.Random;
 
-import Algorithm.*;
+import Algorithm.Algorithm;
+import Algorithm.SimResult;
+import Interface.Field;
 import Interface.Point;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomGreedy extends Algorithm {
 
     private Random randomGenerator;
+    private Field field;
     private double totalDistance;
     private int totalSteps;
 
-    public RandomGreedy(ArrayList<Point> grid) {
-        super(grid);
+    public RandomGreedy(Field field) {
+        super(field.getGrid());
+        this.field = field;
         randomGenerator = new Random();
         calculate();
     }
