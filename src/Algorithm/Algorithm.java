@@ -3,7 +3,6 @@
  * Abstract algorithm container so all subclasses are required
  * to make one specific function used for displaying results.
  */
-
 package Algorithm;
 
 import Interface.Point;

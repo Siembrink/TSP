@@ -1,11 +1,9 @@
 package Algorithm.Algorithms;
 
 import Algorithm.Algorithm;
-import Algorithm.SimResult;
 import Interface.Field;
 import Interface.Point;
 
-import javax.swing.*;
 import java.util.Random;
 
 public class RandomGreedy extends Algorithm {

@@ -41,23 +41,21 @@ public class Greedy extends Algorithm {
             }
 
             for (Point point : grid) {
-                System.out.println(current.calculateDistance(point));
                 if (current.calculateDistance(point) <= closestDistance) {
                     closestDistance = current.calculateDistance(point);
                     closest = point;
                 }
             }
-            System.out.println("LOOP " + count + "\nCURRENT: " + current.toString() + "\nNEW: " + closest.toString());
 
             totalDistance += current.calculateDistance(closest);
+            field.drawLine(current, closest, count);
             current = closest;
 
 
-            field.drawLine(current, closest, count);
 
             closestDistance = 999999;
             if (grid.size() == 0) {
-                System.out.println("LOOP OVER");
+                field.removeLine(count);
                 break;
             }
 

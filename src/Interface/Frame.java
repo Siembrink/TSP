@@ -32,46 +32,68 @@ public class Frame extends JFrame implements ActionListener {
     public Frame() {
 
         setTitle("TSP Simulation");
-        setLayout(new FlowLayout());
+
+        setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+
         setSize(1020, 1200); // Size of the main frame
+
+        c.insets = new Insets(20, 0, 40, 0);
 
         /** Option to change the width of Field **/
         width = new JLabel("Width : ");
-        add(width);
-        selectWidth = new JComboBox(arrayWidth);
-        add(selectWidth);
+        c.gridx = 11;
+        c.gridy = 0;
+        c.ipadx = 5;
+        add(width, c);
 
+        selectWidth = new JComboBox(arrayWidth);
+        c.gridx = 12;
+        add(selectWidth, c);
 
         /** Change width **/
         change = new JButton("Change");
-        add(change);
+        c.gridx = 13;
+        add(change, c);
         change.addActionListener(this);
 
 
+        /* Field grid */
+        field = new Field(10);
+        c.gridx = 0;
+        c.gridy = 0;
+        c.gridwidth = 10;
+        c.gridheight = 10;
+        c.ipadx = 1000;
+        c.ipady = 1000;
+        c.fill = GridBagConstraints.CENTER;
+        add(field, c);
 
         enumeration = new JButton("Enumeration");
-        add(enumeration);
+        c.gridx = 11;
+        c.gridy = 5;
+        c.gridwidth = 2;
+        c.gridheight = 1;
+        c.ipadx = 0;
+        c.ipady = 0;
+        add(enumeration, c);
         enumeration.addActionListener(this);
 
         greedy = new JButton("Greedy");
-        add(greedy);
+        c.gridx = 13;
+        c.gridy = 5;
+        c.gridwidth = 2;
+        add(greedy, c);
         greedy.addActionListener(this);
 
-        random = new JButton("RandomGreedy");
-        add(random);
+        random = new JButton("Random");
+        c.gridx = 15;
+        c.gridwidth = 2;
+        c.gridy = 5;
+        add(random, c);
         random.addActionListener(this);
-        result = new JLabel("SimResult : ");
-        add(result);
-
-        displayResult = new JTextArea("hallo");
-        add(displayResult);
-        field = new Field(10);
-        add(field);
 
 
-
-
-        setLocationRelativeTo(null); // Centers
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         setVisible(true);

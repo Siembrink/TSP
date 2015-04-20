@@ -48,16 +48,19 @@ public class Point {
     }
 
     public double calculateDistance(Point newPoint) {
-        if (this == newPoint) {
-            return 0;
-        } else {
-            double distance = Math.sqrt(
-                    ((newPoint.getX() - this.getX()) * (newPoint.getX() - this.getX())) +
-                            ((newPoint.getY() - this.getY()) * (newPoint.getY() * this.getY()))
-            );
-            return distance;
-        }
+        int x1 = this.getX();
+        int y1 = this.getY();
+        int x2 = newPoint.getX();
+        int y2 = newPoint.getY();
+
+        double diffX = Math.abs(x2 - x1);
+        double diffY = Math.abs(y2 - y1);
+
+        double square = (diffX * diffX) + (diffY * diffY);
+
+        return Math.sqrt(square);
     }
+
 
     @Override
     public String toString() {

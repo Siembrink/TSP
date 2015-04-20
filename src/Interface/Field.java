@@ -23,8 +23,8 @@ public class Field extends JPanel implements MouseListener {
 
     public Field(int columns) {
         this.columns = columns;
-        grid = new ArrayList<Point>();
-        lines = new ArrayList<Line>();
+        grid = new ArrayList<>();
+        lines = new ArrayList<>();
 
         setPreferredSize(new Dimension(1001, 1001));
         addMouseListener(this);
@@ -94,8 +94,8 @@ public class Field extends JPanel implements MouseListener {
 
     public void resetField(int columns) {
         this.columns = columns;
-        lines = new ArrayList<Line>();
-        grid = new ArrayList<Point>();
+        lines = new ArrayList<>();
+        grid = new ArrayList<>();
         initializeField();
         repaint();
     }
@@ -131,11 +131,7 @@ public class Field extends JPanel implements MouseListener {
         int halfPointSize = pointSize / 2;
 
         boolean gridNumbers;
-        if (grid.size() < 1000) {
-            gridNumbers = true;
-        } else {
-            gridNumbers = false;
-        }
+        gridNumbers = grid.size() < 1000;
 
         // Add all the blocks
         for (Point point : grid) {
@@ -157,14 +153,28 @@ public class Field extends JPanel implements MouseListener {
 
                 // Draw the simulation lines indicating the route
                 for (Line line : lines) {
+                    int x1;
+                    int y1;
                     brush.setColor(Color.BLUE);
-                    int x1 = line.getPoint1().getX() + halfPointSize;
-                    int y1 = line.getPoint1().getY() + halfPointSize;
+
+                    // If the point is the corner of the field, draw from 1000, 1000
+                    if (line.getPoint1().getIndex() == 201285) {
+                        x1 = line.getPoint1().getX();
+                        y1 = line.getPoint1().getY();
+                    } else {
+                        x1 = line.getPoint1().getX() + halfPointSize;
+                        y1 = line.getPoint1().getY() + halfPointSize;
+                    }
+
                     int x2 = line.getPoint2().getX() + halfPointSize;
                     int y2 = line.getPoint2().getY() + halfPointSize;
                     brush.drawLine(x1, y1, x2, y2);
-                    brush.drawString(Integer.toString(line.getNumber()+1), x2-10, y2-10);
+
+
+                    brush.drawString(Integer.toString(line.getNumber() + 1), x2 - 10, y2 - 10);
                 }
+
+
             }
 
             brush.setColor(Color.GRAY);
@@ -179,11 +189,17 @@ public class Field extends JPanel implements MouseListener {
 
             // Draw the grid lines
             brush.drawRect(point.getX(), point.getY(), pointSize, pointSize);
+
         }
     }
 
     public void drawLine(Point point1, Point point2, int number) {
         lines.add(new Line(point1, point2, number));
+        repaint();
+    }
+
+    public void removeLine(int index) {
+        lines.remove(index);
         repaint();
     }
 
