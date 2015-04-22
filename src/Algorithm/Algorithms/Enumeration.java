@@ -1,18 +1,24 @@
 package Algorithm.Algorithms;
 
-import Algorithm.*;
-import Interface.Point;
 
-import java.util.ArrayList;
+import Algorithm.Algorithm;
+import Interface.*;
 
-public class Enumeration extends Algorithm{
 
-    public Enumeration(ArrayList<Point> grid) {
-        super(grid);
+public class Enumeration extends Algorithm {
+
+    private Field field;
+    private double totalDistance;
+
+    public Enumeration(Field field) {
+        super(field.getGrid());
+        this.field = field;
+        calculate();
     }
 
     @Override
     public void calculate() {
+
 
     }
 
