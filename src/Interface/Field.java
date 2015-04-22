@@ -41,10 +41,10 @@ public class Field extends JPanel implements MouseListener {
          * the points onto the gridmap.
          *
          *
-         // 10 columns -> 100px wide 100px high | 100 points
-         // 25 columns ->  40px wide  40px high | 625 points
-         // 50 columns ->  20px wide  20px high | 2500 points
-         // 100columns ->  10px wide  10px high | 10000 points
+         *  10 columns -> 100px wide 100px high | 100 points
+         *  25 columns ->  40px wide  40px high | 625 points
+         *  50 columns ->  20px wide  20px high | 2500 points
+         *  100columns ->  10px wide  10px high | 10000 points
          */
 
         pointSize = 10;
