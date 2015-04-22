@@ -68,9 +68,9 @@ public class Frame extends JFrame implements ActionListener {
 
         loadOrder = new JButton("Load order...");
         loadOrder.addActionListener(this);
-        c.gridx = 14;
-        add(loadOrder, c);
-
+//        c.gridx = 14;
+//        add(loadOrder, c);
+        add(loadOrder);
 
         /* Field grid */
         field = new Field(10);
