@@ -15,29 +15,27 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class XmlFileObject {
+public class Order {
 
     private Customer klant;
     private String datum;
     private String ordernummer;
     private ArrayList<String> artikelnummer;
 
-
-    public XmlFileObject(File xmlFile) throws NullPointerException, SAXParseException {
+    public Order(File xmlFile) throws NullPointerException, SAXParseException {
         if (xmlFile != null) {
             try {
                 DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
                 Document doc = dBuilder.parse(xmlFile);
 
-                //optional, but recommended
-                //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
                 doc.getDocumentElement().normalize();
 
                 datum = doc.getElementsByTagName("datum").item(0).getTextContent();
                 ordernummer = doc.getElementsByTagName("ordernummer").item(0).getTextContent();
 
                 NodeList subcatklant = doc.getElementsByTagName("klant");
+
                 for (int temp = 0; temp < subcatklant.getLength(); temp++) {
                     Node node = subcatklant.item(temp);
 
@@ -57,7 +55,6 @@ public class XmlFileObject {
                 NodeList artikelnr = doc.getElementsByTagName("artikelnr");
                 artikelnummer = new ArrayList<>();
                 for (int i = 0; i < artikelnr.getLength(); i++) {
-                    int iplus1 = i + 1;
                     artikelnummer.add(doc.getElementsByTagName("artikelnr").item(i).getTextContent());
                 }
 
