@@ -118,8 +118,17 @@ public class Field extends JPanel implements MouseListener {
         repaint();
     }
 
-    private void selectPoint(Point point) {
-        // Overloading method to select a point by point instead of coordinates
+    public void selectPointFromXML(int index) {
+        /**
+         * This method selects a point when you load in an XML file.
+         */
+        for (Point point : grid) {
+            if (point.getIndex() == index) {
+                point.setStatus("SELECTED");
+                break;
+            }
+        }
+        repaint();
     }
 
     public void paintComponent(Graphics brush) {

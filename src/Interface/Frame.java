@@ -32,8 +32,11 @@ public class Frame extends JFrame implements ActionListener {
     private JFileChooser fileOpener;
     private Order xml;
 
-    /** In here we create the frame in the constructor, the constructor does not need any parameters.**/
     public Frame() {
+        /**
+         * In this method we create the frame and add all the GUI
+         * elements. This constructor does not require any parameters.
+         */
 
         setTitle("TSP Simulation");
 
@@ -120,9 +123,9 @@ public class Frame extends JFrame implements ActionListener {
     }
 
     public void getWidth(int Index) {
-        if(Index == 0) {
+        if (Index == 0) {
             field.resetField(10);
-        } else if(Index == 1) {
+        } else if (Index == 1) {
             field.resetField(25);
         } else if (Index == 2) {
             field.resetField(50);
@@ -139,31 +142,39 @@ public class Frame extends JFrame implements ActionListener {
         } else if (e.getSource() == random) {
             RandomGreedy algorithm = new RandomGreedy(field);
             algorithm.getResult();
-        } else if(e.getSource() == greedy) {
+        } else if (e.getSource() == greedy) {
             Greedy algorithm = new Greedy(field);
             algorithm.getResult();
         } else if (e.getSource() == enumeration) {
             Enumeration algorithm = new Enumeration(field);
-
         } else if (e.getSource() == loadOrder) {
-            try {
-                fileOpener = new JFileChooser();
-                fileOpener.setFileSelectionMode(JFileChooser.FILES_ONLY);
-                fileOpener.setFileFilter(new FileNameExtensionFilter("XML files (*.xml)", "xml"));
-
-                if (fileOpener.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                    xml = new Order(fileOpener.getSelectedFile());
-                    System.out.println(xml.getCustomer().getLastname());
-                    System.out.println(xml.getDatum());
-                    for (int i = 0; i < xml.getArtikelnummer().size(); i++) {
-                        System.out.println(xml.getArtikelnummer().get(i));
-                    }
-                }
-            } catch (NullPointerException ex) {
-                JOptionPane.showMessageDialog(this, "Selected invalid file");
-            } catch (SAXParseException ex) {
-                JOptionPane.showMessageDialog(this, "Selected invalid file");
+            if (!getXMLOrder()) {
+                JOptionPane.showMessageDialog(this, "Failed to load order.");
             }
+        }
+    }
+
+    private boolean getXMLOrder() {
+        try {
+            fileOpener = new JFileChooser();
+            fileOpener.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            fileOpener.setFileFilter(new FileNameExtensionFilter("XML files (*.xml)", "xml"));
+
+            if (fileOpener.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                xml = new Order(fileOpener.getSelectedFile());
+                System.out.println(xml.getCustomer().getLastname());
+                System.out.println(xml.getDatum());
+                for (int i = 0; i < xml.getArtikelnummer().size(); i++) {
+                    System.out.println(xml.getArtikelnummer().get(i));
+                    field.selectPointFromXML(Integer.parseInt(xml.getArtikelnummer().get(i)));
+                }
+            }
+
+            return true;
+        } catch (NullPointerException ex) {
+            return false;
+        } catch (SAXParseException ex) {
+            return false;
         }
     }
 }
