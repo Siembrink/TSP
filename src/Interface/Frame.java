@@ -7,8 +7,10 @@ package Interface;
 
 import Algorithm.Algorithms.Greedy;
 import Algorithm.Algorithms.RandomGreedy;
+import jdk.internal.org.xml.sax.SAXParseException;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +29,10 @@ public class Frame extends JFrame implements ActionListener {
     private JButton enumeration;
     private JButton greedy;
     private JButton random;
+
+    private JButton loadOrder;
+    private JFileChooser fileOpener;
+    private XmlFileObject xml;
 
     /** In here we create the frame in the constructor, the constructor does not need any parameters.**/
     public Frame() {
@@ -56,6 +62,11 @@ public class Frame extends JFrame implements ActionListener {
         c.gridx = 13;
         add(change, c);
         change.addActionListener(this);
+
+        loadOrder = new JButton("Load order...");
+        loadOrder.addActionListener(this);
+        c.gridx = 14;
+        add(loadOrder, c);
 
 
         /* Field grid */
@@ -128,6 +139,25 @@ public class Frame extends JFrame implements ActionListener {
             algorithm.getResult();
         } else if (e.getSource() == enumeration) {
 
+        } else if (e.getSource() == loadOrder) {
+            try {
+                fileOpener = new JFileChooser();
+                fileOpener.setFileSelectionMode(JFileChooser.FILES_ONLY);
+                fileOpener.setFileFilter(new FileNameExtensionFilter("XML files (*.xml)", "xml"));
+
+                if (fileOpener.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    xml = new XmlFileObject(fileOpener.getSelectedFile());
+                    System.out.println(xml.getCustomer().getLastname());
+                    System.out.println(xml.getDatum());
+                    for (int i = 0; i < xml.getArtikelnummer().size(); i++) {
+                        System.out.println(xml.getArtikelnummer().get(i));
+                    }
+                }
+            } catch (NullPointerException ex) {
+                JOptionPane.showMessageDialog(this, "Selected invalid file");
+            } catch (SAXParseException ex) {
+                JOptionPane.showMessageDialog(this, "Selected invalid file");
+            }
         }
     }
 }
