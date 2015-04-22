@@ -27,12 +27,9 @@ public class Frame extends JFrame implements ActionListener {
     private JButton enumeration;
     private JButton greedy;
     private JButton random;
-    private JScrollBar JSHorBar;
-    private JScrollBar JSVerBar;
-
     private JButton loadOrder;
     private JFileChooser fileOpener;
-    private XmlFileObject xml;
+    private Order xml;
 
     /** In here we create the frame in the constructor, the constructor does not need any parameters.**/
     public Frame() {
@@ -155,7 +152,7 @@ public class Frame extends JFrame implements ActionListener {
                 fileOpener.setFileFilter(new FileNameExtensionFilter("XML files (*.xml)", "xml"));
 
                 if (fileOpener.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                    xml = new XmlFileObject(fileOpener.getSelectedFile());
+                    xml = new Order(fileOpener.getSelectedFile());
                     System.out.println(xml.getCustomer().getLastname());
                     System.out.println(xml.getDatum());
                     for (int i = 0; i < xml.getArtikelnummer().size(); i++) {
