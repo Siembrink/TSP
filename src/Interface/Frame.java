@@ -22,77 +22,86 @@ public class Frame extends JFrame implements ActionListener {
     private JButton change;
     private Field field;
     private int selectedWidth;
-    private JLabel result;
-    private JTextArea displayResult;
     private JButton enumeration;
     private JButton greedy;
     private JButton random;
+    private JScrollBar JSHorBar;
+    private JScrollBar JSVerBar;
 
     /** In here we create the frame in the constructor, the constructor does not need any parameters.**/
     public Frame() {
 
         setTitle("TSP Simulation");
 
-        setLayout(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
+        setLayout(new FlowLayout());
+//        GridBagConstraints c = new GridBagConstraints();
 
         setSize(1020, 1200); // Size of the main frame
-
-        c.insets = new Insets(20, 0, 40, 0);
+//
+//        c.insets = new Insets(20, 0, 40, 0);
 
         /** Option to change the width of Field **/
         width = new JLabel("Width : ");
-        c.gridx = 11;
-        c.gridy = 0;
-        c.ipadx = 5;
-        add(width, c);
+//        c.gridx = 11;
+//        c.gridy = 0;
+//        c.ipadx = 5;
+//        add(width, c);
+        add(width);
 
         selectWidth = new JComboBox(arrayWidth);
-        c.gridx = 12;
-        add(selectWidth, c);
+//        c.gridx = 12;
+//        add(selectWidth, c);
+        add(selectWidth);
 
         /** Change width **/
         change = new JButton("Change");
-        c.gridx = 13;
-        add(change, c);
+//        c.gridx = 13;
+//        add(change, c);
+        add(change);
         change.addActionListener(this);
 
 
         /* Field grid */
         field = new Field(10);
-        c.gridx = 0;
-        c.gridy = 0;
-        c.gridwidth = 10;
-        c.gridheight = 10;
-        c.ipadx = 1000;
-        c.ipady = 1000;
-        c.fill = GridBagConstraints.CENTER;
-        add(field, c);
+//        c.gridx = 0;
+//        c.gridy = 0;
+//        c.gridwidth = 10;
+//        c.gridheight = 10;
+//        c.ipadx = 1000;
+//        c.ipady = 1000;
+//        c.fill = GridBagConstraints.CENTER;
+//        add(field, c);
+
 
         enumeration = new JButton("Enumeration");
-        c.gridx = 11;
-        c.gridy = 5;
-        c.gridwidth = 2;
-        c.gridheight = 1;
-        c.ipadx = 0;
-        c.ipady = 0;
-        add(enumeration, c);
+//        c.gridx = 11;
+//        c.gridy = 5;
+//        c.gridwidth = 2;
+//        c.gridheight = 1;
+//        c.ipadx = 0;
+//        c.ipady = 0;
+//        add(enumeration, c);
+        add(enumeration);
         enumeration.addActionListener(this);
 
         greedy = new JButton("Greedy");
-        c.gridx = 13;
-        c.gridy = 5;
-        c.gridwidth = 2;
-        add(greedy, c);
+//        c.gridx = 13;
+//        c.gridy = 5;
+//        c.gridwidth = 2;
+//        add(greedy, c);
+        add(greedy);
         greedy.addActionListener(this);
 
         random = new JButton("Random");
-        c.gridx = 15;
-        c.gridwidth = 2;
-        c.gridy = 5;
-        add(random, c);
+//        c.gridx = 15;
+//        c.gridwidth = 2;
+//        c.gridy = 5;
+//        add(random, c);
+        add(random);
         random.addActionListener(this);
 
+
+        add(field);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
