@@ -16,6 +16,7 @@ public class RandomGreedy extends Algorithm {
     public RandomGreedy(Field field) {
         super(field.getGrid());
         this.field = field;
+        field.clearLines();
         randomGenerator = new Random();
         calculate();
     }

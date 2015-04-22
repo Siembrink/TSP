@@ -7,6 +7,8 @@
 
 package Interface;
 
+import Algorithm.Algorithms.Route;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -211,9 +213,30 @@ public class Field extends JPanel implements MouseListener {
         repaint();
     }
 
+    public void drawRoute(Route route) {
+        /**
+         * This method draws all lines that are included
+         * in a route. It clears all original lines on the
+         * field and adds every one that exists within
+         * that route.
+         */
+        lines = new ArrayList<>();
+        Point oldPoint = new Point(201285, 1000, 1000);
+        int pointCounter = 0;
+        for (Point point : route.getRouteList()) {
+            drawLine(oldPoint, point, pointCounter);
+            oldPoint = point;
+            pointCounter++;
+        }
+    }
+
     public void removeLine(int index) {
         lines.remove(index);
         repaint();
+    }
+
+    public void clearLines() {
+        lines = new ArrayList<>();
     }
 
     /* #------ Getters and Setters ------# */

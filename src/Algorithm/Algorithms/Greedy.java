@@ -21,6 +21,7 @@ public class Greedy extends Algorithm {
     public Greedy(Field field) {
         super(field.getGrid());
         this.field = field;
+        field.clearLines();
         current = initial;
         totalDistance = 0;
         calculate();
