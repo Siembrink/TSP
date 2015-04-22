@@ -29,14 +29,14 @@ public class Greedy extends Algorithm {
 
     @Override
     public void calculate() {
+        System.out.println("#------ Simulation Start (Greedy / Nearest Neighbor) ------#");
         double closestDistance = 999999999;
 
-        boolean loop = true;
         int count = 0;
         int gridSize = grid.size();
 
 
-        while (loop) {
+        while (true) {
             if (!(current.getIndex() == 201285)) {
                 grid.remove(current);
             }

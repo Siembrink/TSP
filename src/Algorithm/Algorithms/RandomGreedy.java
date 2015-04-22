@@ -23,6 +23,7 @@ public class RandomGreedy extends Algorithm {
 
     @Override
     public void calculate() {
+        System.out.println("#------ Simulation Start (Random Greedy) ------#");
 
         int arrayLength = grid.size();
         int loopCounter = 0;

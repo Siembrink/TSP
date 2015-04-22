@@ -1,7 +1,6 @@
 package Algorithm.Algorithms;
 
 import Algorithm.Algorithm;
-import Algorithm.Algorithms.Route;
 import Interface.Field;
 import Interface.Point;
 
@@ -22,7 +21,7 @@ public class ObjectEnumeration extends Algorithm {
 
     @Override
     public void calculate() {
-        System.out.println("#------ Simulation Start ------#");
+        System.out.println("#------ Simulation Start (Full enumeration) ------#");
 
         Route shortestRoute = new Route(initial);
         int shortestRouteDistance = 999999;
@@ -36,6 +35,8 @@ public class ObjectEnumeration extends Algorithm {
                 shortestRouteDistance = route.getTotalDistance();
             }
         }
+
+        field.drawRoute(shortestRoute);
 
         System.out.println("Beste route: " + shortestRoute.toString());
         System.out.println("Afstand: " + shortestRoute.getTotalDistance());
@@ -55,10 +56,6 @@ public class ObjectEnumeration extends Algorithm {
                 route.add(point);
             }
             routes.add(route);
-
-            field.drawRoute(route);
-
-            // Draw all the lines for this route
         }
     }
 

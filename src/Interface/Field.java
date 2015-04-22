@@ -221,13 +221,21 @@ public class Field extends JPanel implements MouseListener {
          * that route.
          */
         lines = new ArrayList<>();
-        Point oldPoint = new Point(201285, 1000, 1000);
         int pointCounter = 0;
+        Point oldPoint = new Point(209381, 0, 0);
+
         for (Point point : route.getRouteList()) {
-            drawLine(oldPoint, point, pointCounter);
-            oldPoint = point;
-            pointCounter++;
+            if (!(point == route.getRouteList().get(0))) {
+                System.out.println("Drawing line between " + oldPoint.toString() + " and " + point.toString());
+                drawLine(oldPoint, point, pointCounter);
+                oldPoint = point;
+                pointCounter++;
+            } else {
+                oldPoint = point;
+            }
         }
+
+        repaint();
     }
 
     public void removeLine(int index) {
