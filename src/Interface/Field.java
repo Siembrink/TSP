@@ -118,6 +118,10 @@ public class Field extends JPanel implements MouseListener {
         repaint();
     }
 
+    private void selectPoint(Point point) {
+        // Overloading method to select a point by point instead of coordinates
+    }
+
     public void paintComponent(Graphics brush) {
         /**
          * This method is the graphics drawing class, it loops
