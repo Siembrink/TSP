@@ -7,6 +7,7 @@ package Interface;
 
 import Algorithm.Algorithms.Greedy;
 import Algorithm.Algorithms.RandomGreedy;
+import Algorithm.Algorithms.Enumeration;
 import jdk.internal.org.xml.sax.SAXParseException;
 
 import javax.swing.*;
@@ -137,13 +138,12 @@ public class Frame extends JFrame implements ActionListener {
             this.getWidth(selectedWidth);
         } else if (e.getSource() == random) {
             RandomGreedy algorithm = new RandomGreedy(field);
-//            Result result = new Result();
-//            result.setVisible(true);
             algorithm.getResult();
         } else if(e.getSource() == greedy) {
             Greedy algorithm = new Greedy(field);
             algorithm.getResult();
         } else if (e.getSource() == enumeration) {
+            Enumeration algorithm = new Enumeration(field);
 
         } else if (e.getSource() == loadOrder) {
             try {
