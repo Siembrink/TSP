@@ -1,8 +1,9 @@
 /**
- * -- Field class for the simulation grid --
+ *       #--- Field class for the simulation grid ---#
  * This class is the GUI for the simulation grid, and handles
  * the way you interact with the grid like clicking on points
- * to add them to the simulation.
+ * to add them to the simulation. It also contains many methods
+ * for handling points and also drawing lines on the field.
  */
 
 package Interface;
@@ -19,6 +20,7 @@ public class Field extends JPanel implements MouseListener {
 
     private ArrayList<Point> grid;
     private ArrayList<Line> lines;
+
     private int columns;
     private int pointSize;
     private boolean drawLines;
@@ -54,6 +56,7 @@ public class Field extends JPanel implements MouseListener {
         int gridSize = 10000;
         int rowCount = 1;
 
+        // Set the size variables of the field
         if (columns == 10) {
             pointSize = 100;
             maxRow = 10;
@@ -78,7 +81,6 @@ public class Field extends JPanel implements MouseListener {
 
         // Start making the points and add them to the grid
         while (count < gridSize) {
-            // Add a new point to the grid
             grid.add(new Point(count, x, y));
 
             if (rowCount == maxRow) {
@@ -95,6 +97,7 @@ public class Field extends JPanel implements MouseListener {
     }
 
     public void resetField(int columns) {
+        /** This function clears the field of any added elements **/
         this.columns = columns;
         lines = new ArrayList<>();
         grid = new ArrayList<>();
@@ -137,9 +140,7 @@ public class Field extends JPanel implements MouseListener {
     }
 
     public void selectPointFromInput(int index) {
-        /**
-         * This method selects a point when you load in an XML file.
-         */
+        /** This method selects a point when you load in an XML file. **/
         for (Point point : grid) {
             if (point.getIndex() == index) {
                 point.setStatus("SELECTED");
@@ -153,7 +154,7 @@ public class Field extends JPanel implements MouseListener {
         /**
          * This method is the graphics drawing class, it loops
          * over the grid and adds the points, as well as other
-         * graphics needed to make the grid UI.
+         * graphics like lines needed to make the grid UI.
          */
         // Set the background
         brush.setColor(Color.WHITE);
@@ -210,6 +211,7 @@ public class Field extends JPanel implements MouseListener {
 
             brush.setColor(Color.GRAY);
 
+            // Draw the grid numbers on the screen (If the size is 10 or 25)
             if (gridNumbers) {
                 if (point.getIndex() == 0) {
                     brush.drawString("0", point.getX() + 5, point.getY() + 15);
@@ -225,6 +227,7 @@ public class Field extends JPanel implements MouseListener {
     }
 
     public void drawLine(Point point1, Point point2, int number) {
+        /** Make a new Line object and repaint the field to make it show up on the grid. **/
         lines.add(new Line(point1, point2, number));
         repaint();
     }
@@ -254,20 +257,23 @@ public class Field extends JPanel implements MouseListener {
     }
 
     public void removeLine(int index) {
+        /** Remove a line from the Lines array. **/
         lines.remove(index);
         repaint();
     }
 
     public void clearLines() {
+        /** Clear not the whole field but only the lines **/
         lines = new ArrayList<>();
     }
 
-    /* #------ Getters and Setters ------# */
+    /**
+     * Getter and Abstract methods *
+     */
     public ArrayList<Point> getGrid() {
         return grid;
     }
 
-    /* #------ Abstract Methods ------# */
     @Override
     public void mouseClicked(MouseEvent e) {
         selectPoint(e);

@@ -1,6 +1,7 @@
 package Algorithm.Algorithms;
 
 import Algorithm.Algorithm;
+import Algorithm.SimResult;
 import Interface.Field;
 import Interface.Point;
 
@@ -15,8 +16,7 @@ public class Enumeration extends Algorithm {
     private Route shortestRoute;
     private int shortestRouteDistance;
 
-    private Route permuteRoute;
-    private double permuteShortestDistance;
+    private int totalCalculations;
 
     public Enumeration(Field field) {
         super(field.getGrid());
@@ -27,7 +27,7 @@ public class Enumeration extends Algorithm {
         shortestRoute = new Route(initial);
 
         shortestRouteDistance = 9999999;
-        permuteShortestDistance = 9999999;
+        totalCalculations = 0;
         calculate();
     }
 
@@ -38,17 +38,17 @@ public class Enumeration extends Algorithm {
         // Calculate all possible combinations
         permute(grid, 0);
 
+        // Check which route is the shortest
         for (Route route : routes) {
             if (route.getTotalDistance() < shortestRouteDistance) {
                 shortestRoute = route;
                 shortestRouteDistance = route.getTotalDistance();
+                totalCalculations++;
             }
         }
 
+        // Draw the route on the field
         field.drawRoute(shortestRoute);
-
-        System.out.println("Beste route: " + shortestRoute.toString());
-        System.out.println("Afstand: " + shortestRoute.getTotalDistance());
     }
 
     public void permute(java.util.List<Point> arr, int k){
@@ -66,13 +66,18 @@ public class Enumeration extends Algorithm {
             java.util.Collections.swap(arr, i, k);
             permute(arr, k+1);
             java.util.Collections.swap(arr, k, i);
+
+            totalCalculations++;
         }
 
         if ((k == arr.size() - 1)) {
             Route route = new Route(initial);
+
             for (Point point : arr) {
                 route.add(point);
+                totalCalculations++;
             }
+
             routes.add(route);
             System.out.println(route.toStringRoute() + " distance: " + route.getTotalDistance());
         }
@@ -94,7 +99,8 @@ public class Enumeration extends Algorithm {
 
     @Override
     public void getResult() {
-
+        SimResult result = new SimResult("Full Enumeration", shortestRoute.getTotalDistance(), totalCalculations);
+        System.out.println(result.toString());
     }
 
 }

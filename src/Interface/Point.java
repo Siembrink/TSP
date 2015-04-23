@@ -17,9 +17,9 @@ public class Point {
     public Point(int index, int x, int y) {
         this.index = index;
         this.status = "";
-        selected = false;
         this.x = x;
         this.y = y;
+        selected = false;
     }
 
     public String getStatus() {
@@ -48,6 +48,11 @@ public class Point {
     }
 
     public double calculateDistance(Point newPoint) {
+        /**
+         * This method calculates the distance (in pixels)
+         * between the current point and the new point
+         * which you pass as parameter.
+         */
         int x1 = this.getX();
         int y1 = this.getY();
         int x2 = newPoint.getX();

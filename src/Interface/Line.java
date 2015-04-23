@@ -1,3 +1,14 @@
+/**
+ * #------ Line Class ------#
+ * This class is the blueprint for a line object.
+ * This class doesn't have a lot of functionality
+ * other than storing information about a line.
+ * <p>
+ * The Field.paintComponent uses these objects to
+ * draw the lines on the field, as results of
+ * simulations.
+ */
+
 package Interface;
 
 public class Line {
