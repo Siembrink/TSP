@@ -38,7 +38,6 @@ public class Enumeration extends Algorithm {
         // Calculate all possible combinations
         permute(grid, 0);
 
-        System.out.println(routes.toString());
         for (Route route : routes) {
             if (route.getTotalDistance() < shortestRouteDistance) {
                 shortestRoute = route;
@@ -75,7 +74,7 @@ public class Enumeration extends Algorithm {
                 route.add(point);
             }
             routes.add(route);
-            System.out.println("Enum route: " + route.toStringRoute());
+            System.out.println(route.toStringRoute() + " distance: " + route.getTotalDistance());
         }
     }
 
