@@ -16,6 +16,7 @@ public class ResultPanel extends JPanel implements ActionListener {
 
         setPreferredSize(new Dimension(200, 600));
         add(new JButton("Test button"));
+
     }
 
     @Override
