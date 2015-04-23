@@ -109,7 +109,6 @@ public class Field extends JPanel implements MouseListener {
             for(int i = 0; i < numbers; i++) {
                 int random = (int )(Math.random() * grid.size());
                 this.selectPointFromInput(random);
-                System.out.println(i + ". Selected: " +random);
             }
 
         }
