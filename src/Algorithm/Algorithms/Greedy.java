@@ -7,7 +7,7 @@
 
 package Algorithm.Algorithms;
 
-import Algorithm.Algorithm;
+import Algorithm.*;
 import Interface.Field;
 import Interface.Point;
 
@@ -17,6 +17,7 @@ public class Greedy extends Algorithm {
     private Point closest;
     private Field field;
     private double totalDistance;
+    private int totalSteps;
 
     public Greedy(Field field) {
         super(field.getGrid());
@@ -29,7 +30,6 @@ public class Greedy extends Algorithm {
 
     @Override
     public void calculate() {
-        System.out.println("#------ Simulation Start (Greedy / Nearest Neighbor) ------#");
         double closestDistance = 999999999;
 
         int count = 0;
@@ -66,11 +66,13 @@ public class Greedy extends Algorithm {
                 break;
             }
         }
+        totalSteps = count;
     }
 
     @Override
     public void getResult() {
-        System.out.println(this.toString());
+        SimResult result = new SimResult("Greedy", totalDistance, totalSteps);
+        System.out.println(result.toString());
     }
 
     @Override
