@@ -226,7 +226,6 @@ public class Field extends JPanel implements MouseListener {
 
         for (Point point : route.getRouteList()) {
             if (!(point == route.getRouteList().get(0))) {
-                System.out.println("Drawing line between " + oldPoint.toString() + " and " + point.toString());
                 drawLine(oldPoint, point, pointCounter);
                 oldPoint = point;
                 pointCounter++;

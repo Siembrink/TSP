@@ -8,7 +8,6 @@ package Interface;
 import Algorithm.Algorithms.Greedy;
 import Algorithm.Algorithms.ObjectEnumeration;
 import Algorithm.Algorithms.RandomGreedy;
-import Algorithm.Algorithms.Enumeration;
 import jdk.internal.org.xml.sax.SAXParseException;
 
 import javax.swing.*;
@@ -162,8 +161,6 @@ public class Frame extends JFrame implements ActionListener {
             if (!getXMLOrder()) {
                 JOptionPane.showMessageDialog(this, "Failed to load order.");
             }
-        } else if (e.getSource() == testEnumeration) {
-            Enumeration algorithm = new Enumeration(field);
         }
     }
 

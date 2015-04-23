@@ -12,10 +12,13 @@ public class ObjectEnumeration extends Algorithm {
     private Field field;
     private List<Route> routes;
 
+    private Route shortestRoute;
+
     public ObjectEnumeration(Field field) {
         super(field.getGrid());
         this.field = field;
         routes = new ArrayList<>();
+        shortestRoute = new Route(initial);
         calculate();
     }
 
@@ -23,16 +26,14 @@ public class ObjectEnumeration extends Algorithm {
     public void calculate() {
         System.out.println("#------ Simulation Start (Full enumeration) ------#");
 
-        Route shortestRoute = new Route(initial);
-        int shortestRouteDistance = 999999;
 
         // Calculate all possible combinations
         permute(grid, 0);
 
+        System.out.println(routes.toString());
         for (Route route : routes) {
-            if (route.getTotalDistance() < shortestRouteDistance) {
+            if (route.getTotalDistance() < shortestRoute.getTotalDistance()) {
                 shortestRoute = route;
-                shortestRouteDistance = route.getTotalDistance();
             }
         }
 
@@ -50,12 +51,13 @@ public class ObjectEnumeration extends Algorithm {
             java.util.Collections.swap(arr, k, i);
         }
 
-        if (k == arr.size() -1){
+        if ((k == arr.size() - 1)) {
             Route route = new Route(initial);
             for (Point point : arr) {
                 route.add(point);
             }
             routes.add(route);
+            System.out.println("Enum route: " + route.toStringRoute());
         }
     }
 
