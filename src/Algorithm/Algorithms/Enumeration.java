@@ -13,12 +13,21 @@ public class Enumeration extends Algorithm {
     private List<Route> routes;
 
     private Route shortestRoute;
+    private int shortestRouteDistance;
+
+    private Route permuteRoute;
+    private double permuteShortestDistance;
 
     public Enumeration(Field field) {
         super(field.getGrid());
         this.field = field;
         routes = new ArrayList<>();
+
+        // Set empty routes
         shortestRoute = new Route(initial);
+
+        shortestRouteDistance = 9999999;
+        permuteShortestDistance = 9999999;
         calculate();
     }
 
@@ -26,14 +35,14 @@ public class Enumeration extends Algorithm {
     public void calculate() {
         System.out.println("#------ Simulation Start (Full enumeration) ------#");
 
-
         // Calculate all possible combinations
         permute(grid, 0);
 
         System.out.println(routes.toString());
         for (Route route : routes) {
-            if (route.getTotalDistance() < shortestRoute.getTotalDistance()) {
+            if (route.getTotalDistance() < shortestRouteDistance) {
                 shortestRoute = route;
+                shortestRouteDistance = route.getTotalDistance();
             }
         }
 
@@ -44,6 +53,15 @@ public class Enumeration extends Algorithm {
     }
 
     public void permute(java.util.List<Point> arr, int k){
+        /**
+         * This is the array builder that calls itself to
+         * calculate every possible combination of a given
+         * list of points.
+         *
+         * #-- DO NOT CALCULATE MORE THAN 10 POINTS --#
+         * Will overflow the RAM usage and crash the application.
+         * TODO: Optimize the algorithm
+         */
 
         for (int i = k; i < arr.size(); i++){
             java.util.Collections.swap(arr, i, k);
@@ -59,6 +77,20 @@ public class Enumeration extends Algorithm {
             routes.add(route);
             System.out.println("Enum route: " + route.toStringRoute());
         }
+    }
+
+    private double calculateTotalDistance(List<Point> route) {
+        /** Calculate the total distance of a given list of points. **/
+        int distance = 0;
+        Point current = initial;
+
+        for (Point point : route) {
+            if (!(point == route.get(route.size() - 1))) {
+                distance += current.calculateDistance(point);
+            }
+        }
+
+        return distance;
     }
 
     @Override
