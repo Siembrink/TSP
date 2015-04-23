@@ -6,7 +6,7 @@ package Interface;
 
 
 import Algorithm.Algorithms.Greedy;
-import Algorithm.Algorithms.ObjectEnumeration;
+import Algorithm.Algorithms.Enumeration;
 import Algorithm.Algorithms.RandomGreedy;
 import jdk.internal.org.xml.sax.SAXParseException;
 
@@ -26,6 +26,7 @@ public class Frame extends JFrame implements ActionListener {
     private Field field;
     private int selectedWidth;
     private JButton enumeration;
+    private JButton randomSelected;
     private JButton greedy;
     private JButton random;
     private JButton loadOrder;
@@ -113,9 +114,9 @@ public class Frame extends JFrame implements ActionListener {
         add(random);
         random.addActionListener(this);
 
-        testEnumeration = new JButton("Test-Enumeration");
-        add(testEnumeration);
-        testEnumeration.addActionListener(this);
+        randomSelected = new JButton("Random-Selected");
+        add(randomSelected);
+        randomSelected.addActionListener(this);
 
 
         add(field);
@@ -154,13 +155,15 @@ public class Frame extends JFrame implements ActionListener {
             algorithm.getResult();
 
         } else if (e.getSource() == enumeration) {
-            //Enumeration algorithm = new Enumeration(field);
-            ObjectEnumeration algorithm = new ObjectEnumeration(field);
+            Enumeration algorithm = new Enumeration(field);
+            algorithm.getResult();
 
         } else if (e.getSource() == loadOrder) {
             if (!getXMLOrder()) {
                 JOptionPane.showMessageDialog(this, "Failed to load order.");
             }
+        } else if(e.getSource() == randomSelected) {
+
         }
     }
 
