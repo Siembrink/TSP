@@ -10,6 +10,7 @@ package Algorithm.Algorithms;
 import Algorithm.*;
 import Interface.Field;
 import Interface.Point;
+import Interface.Result;
 
 public class Greedy extends Algorithm {
 
@@ -71,8 +72,7 @@ public class Greedy extends Algorithm {
 
     @Override
     public void getResult() {
-        SimResult result = new SimResult("Greedy", totalDistance, totalSteps);
-        System.out.println(result.toString());
+        Result results = new Result ("Random Greedy", totalDistance, totalSteps);
     }
 
     @Override
