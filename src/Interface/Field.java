@@ -103,6 +103,11 @@ public class Field extends JPanel implements MouseListener {
     }
 
     public void randomSelected (int numbers) {
+        /**
+         * This methods gets the amount of points that needs to be selected
+         * and randomize the points that are going to be selected.
+         * Whenever the amount is greater then the grid size it will give a message.
+         */
         if (grid.size() < numbers) {
             System.out.println("Number is greater then field.");
         } else {
