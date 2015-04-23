@@ -1,6 +1,14 @@
+/**
+ * #--- Random algorithm class ---#
+ * This class contains the algorithm for the Random TSP method.
+ * Running this algorithm makes the program search for random
+ * points all over the selected map and construct a path that way.
+ */
+
 package Algorithm.Algorithms;
 
-import Algorithm.*;
+import Algorithm.Algorithm;
+import Algorithm.SimResult;
 import Interface.Field;
 import Interface.Point;
 
@@ -23,16 +31,11 @@ public class RandomGreedy extends Algorithm {
 
     @Override
     public void calculate() {
-
-
         int arrayLength = grid.size();
         int loopCounter = 0;
         Point lastPoint = initial;
 
         totalDistance = initial.calculateDistance(grid.get(0));
-
-
-
 
         while (loopCounter < arrayLength) {
             Point current = grid.get(randomGenerator.nextInt(grid.size()));
@@ -45,16 +48,11 @@ public class RandomGreedy extends Algorithm {
         }
         totalSteps = loopCounter;
 
-
-
-
     }
 
     @Override
     public void getResult() {
         SimResult result = new SimResult("Random Greedy", totalDistance, totalSteps);
         System.out.println(result.toString());
-
-
     }
 }

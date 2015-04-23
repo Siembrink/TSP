@@ -1,13 +1,16 @@
 /**
- * -- Greedy algorithm class --
+ * #--- Greedy algorithm class ---#
  * This class contains the algorithm for the Greedy TSP method.
- * Greedy will calculate the nearest point from the one it's
- * currently at so it will follow a path of nearest points.
+ * Greedy or Nearest Neighbor will calculate the closest point
+ * away from the current point. It'll start in the bottom right
+ * corner and move to the closest point until there's no points
+ * left in the selected point array.
  */
 
 package Algorithm.Algorithms;
 
-import Algorithm.*;
+import Algorithm.Algorithm;
+import Algorithm.SimResult;
 import Interface.Field;
 import Interface.Point;
 
@@ -35,12 +38,13 @@ public class Greedy extends Algorithm {
         int count = 0;
         int gridSize = grid.size();
 
-
+        // Main loop
         while (true) {
             if (!(current.getIndex() == 201285)) {
                 grid.remove(current);
             }
 
+            // For each point, if it's the closest point, make this the current closest point
             for (Point point : grid) {
                 if (current.calculateDistance(point) <= closestDistance) {
                     closestDistance = current.calculateDistance(point);
@@ -48,13 +52,17 @@ public class Greedy extends Algorithm {
                 }
             }
 
+            // Add the new distance to the current distance
             totalDistance += current.calculateDistance(closest);
+
+            // Draw the route line on the field
             field.drawLine(current, closest, count);
+
+            // Move to the new point by saying the new current is the closest point
             current = closest;
 
-
-
             closestDistance = 999999;
+
             if (grid.size() == 0) {
                 field.removeLine(count);
                 break;
@@ -66,6 +74,7 @@ public class Greedy extends Algorithm {
                 break;
             }
         }
+
         totalSteps = count;
     }
 

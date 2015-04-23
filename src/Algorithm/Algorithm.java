@@ -1,5 +1,5 @@
 /**
- * -- Algorithm abstract class --
+ *            #--- Algorithm abstract class ---#
  * Abstract algorithm container so all subclasses are required
  * to make one specific function used for displaying results.
  */
@@ -23,7 +23,8 @@ public abstract class Algorithm {
     public Algorithm(ArrayList<Point> field) {
         grid = new ArrayList<>();
 
-        // Add all selected points to the grid
+        // Filter out the selected points from the normal
+        //     points and add these to the grid.
         for (Point point : field) {
             if (point.getSelected()) {
                 grid.add(point);

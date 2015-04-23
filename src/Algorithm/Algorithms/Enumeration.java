@@ -1,3 +1,14 @@
+/**
+ * #--- Enumeration algorithm class ---#
+ * This class contains the algorithm for the enumeration TSP method.
+ * When you run it, it will calculate all possible routes it can
+ * take and will give you back the shortest route. This is arguably
+ * the best method for the most accurate path, but it exponentially
+ * gets bigger when you have more points to travel between. This is
+ * why right now (until a new way of computing arrives) this class
+ * isn't optimal to use.
+ */
+
 package Algorithm.Algorithms;
 
 import Algorithm.Algorithm;
@@ -23,7 +34,6 @@ public class Enumeration extends Algorithm {
         this.field = field;
         routes = new ArrayList<>();
 
-        // Set empty routes
         shortestRoute = new Route(initial);
 
         shortestRouteDistance = 9999999;

@@ -1,3 +1,10 @@
+/**
+ * #------ Route class ------#
+ * This is the route class for the algorithms.
+ * It just stores a list of Points in a selected
+ * order and that list is the route the TSP follows.
+ */
+
 package Algorithm.Algorithms;
 
 import Interface.Point;
@@ -8,12 +15,10 @@ public class Route {
 
     private ArrayList<Point> routeList;
     private int totalDistance;
-    private boolean status;
 
     public Route(Point initial) {
         routeList = new ArrayList<>();
         routeList.add(initial);
-        status = true;
     }
 
     public void add(Point point) {
@@ -45,7 +50,4 @@ public class Route {
         return stringbuilder;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
 }

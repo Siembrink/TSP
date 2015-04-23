@@ -20,5 +20,5 @@ public class SimResult {
                 "Total Distance: " + totalDistance + "\n" +
                 "Total Steps: " + totalSteps;
     }
-    }
+}
 
