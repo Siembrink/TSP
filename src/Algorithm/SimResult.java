@@ -13,6 +13,18 @@ public class SimResult {
 
     }
 
+    public int getTotalSteps() {
+        return totalSteps;
+    }
+
+    public double getTotalDistance() {
+        return totalDistance;
+    }
+
+    public String getAlgorithm() {
+        return algorithm;
+    }
+
     @Override
     public String toString() {
         return "-----Results-----\n" +

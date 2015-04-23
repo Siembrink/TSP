@@ -1,5 +1,7 @@
 package Interface;
 
+import Algorithm.SimResult;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,37 +12,55 @@ import java.awt.event.ActionListener;
  */
 public class Result extends JDialog implements ActionListener {
 
-    private JButton jbOk;
-    private JLabel jlResult;
-    private JLabel jlPoints;
-    private JLabel jlPointsResult;
+    private JButton generate;
+    private JButton cancel;
+    private JLabel steps;
+    private JLabel distance;
+    private JLabel algorithmUsed;
 
-    public Result() {
+    private String algorithm;
+    private double totalDistance;
+    private int totalSteps;
+
+    public Result(String algorithm, double totalDistance, int totalSteps) {
+
+        this.algorithm = algorithm;
+        this.totalDistance = totalDistance;
+        this.totalSteps = totalSteps;
 
         setTitle("Results Simulation");
         setLayout(new FlowLayout());
-        setSize(200, 400);
-        jlResult = new JLabel("Simulation Results: ");
-        add(jlResult);
-        jlPoints = new JLabel("Selected Points: ");
-        jlPointsResult = new JLabel();
-        add(jlPoints);
-        add(jlPointsResult);
+        setSize(400, 200);
+        algorithmUsed = new JLabel("Used Algorithm: " + algorithm);
+        add(algorithmUsed);
 
-        jbOk = new JButton("Ok");
-        jbOk.setLocation(100,100);
-        add(jbOk);
+        distance = new JLabel("Total Distance: " + totalDistance);
+        add(distance);
 
-        jbOk.addActionListener(this);
+        steps = new JLabel("Total Steps: " + totalSteps);
+        add(steps);
+
+        generate = new JButton("Generate");
+        add(generate);
+        generate.addActionListener(this);
+
+        cancel = new JButton("Cancel");
+        add(cancel);
+        cancel.addActionListener(this);
 
         setLocationRelativeTo(null); // Centers
+        setVisible(true);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == jbOk) {
+        if (e.getSource() == cancel) {
             setVisible(false);
+        } else if (e.getSource() == generate) {
+            JOptionPane.showMessageDialog(this, "Results generated in console.");
+            SimResult result = new SimResult("Random Greedy", totalDistance, totalSteps);
+            System.out.println(result);
         }
 
     }
