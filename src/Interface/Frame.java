@@ -30,6 +30,7 @@ public class Frame extends JFrame implements ActionListener {
     private JButton greedy;
     private JButton random;
     private JButton loadOrder;
+    private JButton testEnumeration;
     private JFileChooser fileOpener;
     private Order xml;
 
@@ -113,6 +114,10 @@ public class Frame extends JFrame implements ActionListener {
         add(random);
         random.addActionListener(this);
 
+        testEnumeration = new JButton("Test-Enumeration");
+        add(testEnumeration);
+        testEnumeration.addActionListener(this);
+
 
         add(field);
 
@@ -157,6 +162,8 @@ public class Frame extends JFrame implements ActionListener {
             if (!getXMLOrder()) {
                 JOptionPane.showMessageDialog(this, "Failed to load order.");
             }
+        } else if (e.getSource() == testEnumeration) {
+            Enumeration algorithm = new Enumeration(field);
         }
     }
 

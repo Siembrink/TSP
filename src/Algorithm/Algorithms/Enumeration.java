@@ -33,7 +33,8 @@ public class Enumeration extends Algorithm {
         double routeDistance = 0;
         Point lastUsed = initial;
         int index = 0;
-
+        int p = 0;
+        while (p < 5) {
             for (int i = 0; i < grid.size(); i++) {
                 current = grid.get(i);
                 System.out.println("Current Index: " + current.getIndex());
@@ -44,9 +45,13 @@ public class Enumeration extends Algorithm {
                 lastUsed = current;
             }
 
-        indexRoute.add(index, currentRoute);
-        System.out.println("Route " + index + " bestaat uit: "+ indexRoute.get(0) + "\n");
-
+            if (indexRoute.contains(currentRoute)) {
+                System.out.println("Route already known.");
+            } else {
+                indexRoute.add(index, currentRoute);
+            }
+        p++;
+        }
 
 
 
