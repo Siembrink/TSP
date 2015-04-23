@@ -102,6 +102,22 @@ public class Field extends JPanel implements MouseListener {
         repaint();
     }
 
+    public void randomSelected (int numbers) {
+        /**
+         * This methods gets the amount of points that needs to be selected
+         * and randomize the points that are going to be selected.
+         * Whenever the amount is greater then the grid size it will give a message.
+         */
+        if (grid.size() < numbers) {
+            System.out.println("Number is greater then field.");
+        } else {
+            for(int i = 0; i < numbers; i++) {
+                int random = (int )(Math.random() * grid.size());
+                this.selectPointFromInput(random);
+            }
+
+        }
+    }
     private void selectPoint(MouseEvent e) {
         /**
          * This method gets the block coordinates of the point
@@ -120,7 +136,7 @@ public class Field extends JPanel implements MouseListener {
         repaint();
     }
 
-    public void selectPointFromXML(int index) {
+    public void selectPointFromInput(int index) {
         /**
          * This method selects a point when you load in an XML file.
          */

@@ -27,10 +27,10 @@ public class Frame extends JFrame implements ActionListener {
     private int selectedWidth;
     private JButton enumeration;
     private JButton randomSelected;
+    private JTextField numberRandom;
     private JButton greedy;
     private JButton random;
     private JButton loadOrder;
-    private JButton testEnumeration;
     private JFileChooser fileOpener;
     private Order xml;
 
@@ -114,6 +114,9 @@ public class Frame extends JFrame implements ActionListener {
         add(random);
         random.addActionListener(this);
 
+        numberRandom = new JTextField(2);
+        add(numberRandom);
+
         randomSelected = new JButton("Random-Selected");
         add(randomSelected);
         randomSelected.addActionListener(this);
@@ -163,6 +166,16 @@ public class Frame extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(this, "Failed to load order.");
             }
         } else if(e.getSource() == randomSelected) {
+            try {
+                int number = Integer.parseInt(numberRandom.getText());
+                field.randomSelected(number);
+            } catch (NumberFormatException nfe) {
+                System.out.println("Value most be a number.");
+            } catch (Exception exc) {
+                System.out.println("Something went wrong.");
+            }
+
+
 
         }
     }
@@ -179,7 +192,7 @@ public class Frame extends JFrame implements ActionListener {
                 System.out.println(xml.getDatum());
                 for (int i = 0; i < xml.getArtikelnummer().size(); i++) {
                     System.out.println(xml.getArtikelnummer().get(i));
-                    field.selectPointFromXML(Integer.parseInt(xml.getArtikelnummer().get(i)));
+                    field.selectPointFromInput(Integer.parseInt(xml.getArtikelnummer().get(i)));
                 }
             }
 
