@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 public class Result extends JDialog implements ActionListener {
 
     private JButton generate;
-    private JButton cancel;
+    private JButton close;
     private JLabel steps;
     private JLabel distance;
     private JLabel algorithmUsed;
@@ -44,9 +44,9 @@ public class Result extends JDialog implements ActionListener {
         add(generate);
         generate.addActionListener(this);
 
-        cancel = new JButton("Cancel");
-        add(cancel);
-        cancel.addActionListener(this);
+        close = new JButton("Cancel");
+        add(close);
+        close.addActionListener(this);
 
         setLocationRelativeTo(null); // Centers
         setVisible(true);
@@ -55,12 +55,13 @@ public class Result extends JDialog implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == cancel) {
+        if (e.getSource() == close) {
             setVisible(false);
         } else if (e.getSource() == generate) {
             JOptionPane.showMessageDialog(this, "Results generated in console.");
             SimResult result = new SimResult("Random Greedy", totalDistance, totalSteps);
             System.out.println(result);
+            setVisible(false);
         }
 
     }
