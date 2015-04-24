@@ -22,6 +22,9 @@ public class Greedy extends Algorithm {
     private Field field;
     private double totalDistance;
     private int totalSteps;
+    private long startTime;
+    private long endTime;
+    private long totalTime;
 
     public Greedy(Field field) {
         super(field.getGrid());
@@ -34,6 +37,7 @@ public class Greedy extends Algorithm {
 
     @Override
     public void calculate() {
+        startTime = System.currentTimeMillis();
         double closestDistance = 999999999;
 
         int count = 0;
@@ -77,11 +81,13 @@ public class Greedy extends Algorithm {
         }
 
         totalSteps = count;
+        endTime = System.currentTimeMillis();
+        totalTime = endTime - startTime;
     }
 
     @Override
     public void getResult() {
-        Result results = new Result ("Random Greedy", totalDistance, totalSteps);
+        Result results = new Result ("Random Greedy", totalDistance, totalSteps, totalTime);
     }
 
     @Override

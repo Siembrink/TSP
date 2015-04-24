@@ -7,8 +7,9 @@
 
 package Algorithm.Algorithms;
 
+
 import Algorithm.Algorithm;
-import Algorithm.SimResult;
+import Interface.*;
 import Interface.Field;
 import Interface.Point;
 
@@ -20,6 +21,9 @@ public class RandomGreedy extends Algorithm {
     private Field field;
     private double totalDistance;
     private int totalSteps;
+    private long startTime;
+    private long endTime;
+    private long totalTime;
 
     public RandomGreedy(Field field) {
         super(field.getGrid());
@@ -31,6 +35,7 @@ public class RandomGreedy extends Algorithm {
 
     @Override
     public void calculate() {
+        startTime = System.currentTimeMillis();
         int arrayLength = grid.size();
         int loopCounter = 0;
         Point lastPoint = initial;
@@ -47,12 +52,13 @@ public class RandomGreedy extends Algorithm {
             loopCounter++;
         }
         totalSteps = loopCounter;
-
+        endTime = System.currentTimeMillis();
+        totalTime = endTime - startTime;
     }
 
     @Override
     public void getResult() {
-        SimResult result = new SimResult("Random Greedy", totalDistance, totalSteps);
+        Result result = new Result("Random Greedy", totalDistance, totalSteps, totalTime);
         System.out.println(result.toString());
     }
 }

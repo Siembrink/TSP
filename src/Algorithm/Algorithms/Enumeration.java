@@ -28,6 +28,9 @@ public class Enumeration extends Algorithm {
     private int shortestRouteDistance;
 
     private int totalCalculations;
+    private long startTime;
+    private long endTime;
+    private long totalTime;
 
     public Enumeration(Field field) {
         super(field.getGrid());
@@ -43,6 +46,7 @@ public class Enumeration extends Algorithm {
 
     @Override
     public void calculate() {
+        startTime = System.currentTimeMillis();
         System.out.println("#------ Simulation Start (Full enumeration) ------#");
 
         // Calculate all possible combinations
@@ -59,6 +63,8 @@ public class Enumeration extends Algorithm {
 
         // Draw the route on the field
         field.drawRoute(shortestRoute);
+        endTime = System.currentTimeMillis();
+        totalTime = startTime - endTime;
     }
 
     public void permute(java.util.List<Point> arr, int k){
@@ -109,8 +115,8 @@ public class Enumeration extends Algorithm {
 
     @Override
     public void getResult() {
-        SimResult result = new SimResult("Full Enumeration", shortestRoute.getTotalDistance(), totalCalculations);
-        System.out.println(result.toString());
+//        SimResult result = new SimResult("Full Enumeration", shortestRoute.getTotalDistance(), totalCalculations);
+//        System.out.println(result.toString());
     }
 
 }
