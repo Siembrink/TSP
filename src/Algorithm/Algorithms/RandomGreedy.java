@@ -9,9 +9,9 @@ package Algorithm.Algorithms;
 
 
 import Algorithm.Algorithm;
-import Interface.*;
 import Interface.Field;
 import Interface.Point;
+import Interface.Result;
 
 import java.util.Random;
 
@@ -51,8 +51,10 @@ public class RandomGreedy extends Algorithm {
             grid.remove(current);
             loopCounter++;
         }
+
         totalSteps = loopCounter;
         endTime = System.currentTimeMillis(); /** End counting time **/
+
         totalTime = endTime - startTime; /** Difference = total time **/
     }
 

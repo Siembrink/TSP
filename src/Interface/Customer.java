@@ -1,3 +1,12 @@
+/**
+ * #------ Customer class ------#
+ * This clas is unecessary to the TSP
+ * simulation. This class is only here
+ * because we need to be able to read
+ * an order form an XML file for our
+ * school project.
+ */
+
 package Interface;
 
 public class Customer {

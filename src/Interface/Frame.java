@@ -1,6 +1,7 @@
 /**
- * -- This is a frame for the TSP simulation --
- * -- created on 10-4-2015 by Simon Brink --
+ *         #------ TSP Frame ------#
+ * Contains many methods for graphical objects
+ * and the actionlistener for all buttons.
  */
 package Interface;
 
