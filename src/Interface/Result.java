@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by Siem on 17-4-2015.
+ * This will generate a extra JFrame with the algorithm's results.
+ * The user gets the options to display the results in the console.
  */
 public class Result extends JDialog implements ActionListener {
 
@@ -24,6 +26,7 @@ public class Result extends JDialog implements ActionListener {
     private int totalSteps;
     private long totalTime;
 
+    /** Constructer asks for results and displays it in a JDialog. **/
     public Result(String algorithm, double totalDistance, int totalSteps, long totalTime) {
 
         this.algorithm = algorithm;
@@ -32,9 +35,9 @@ public class Result extends JDialog implements ActionListener {
         this.totalTime = totalTime;
 
         setTitle("Results Simulation");
-        setLayout(new FlowLayout());
-        setSize(400, 200);
-        algorithmUsed = new JLabel("Used Algorithm: " + algorithm);
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        setSize(250, 200);
+        algorithmUsed = new JLabel("Used Algorithm: " + algorithm + "\n");
         add(algorithmUsed);
 
         time = new JLabel("Total Time: " + totalTime);

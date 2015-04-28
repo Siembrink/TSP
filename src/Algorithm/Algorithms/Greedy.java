@@ -87,7 +87,7 @@ public class Greedy extends Algorithm {
 
     @Override
     public void getResult() {
-        Result results = new Result ("Random Greedy", totalDistance, totalSteps, totalTime);
+        Result results = new Result ("Greedy", totalDistance, totalSteps, totalTime);
     }
 
     @Override

@@ -7,7 +7,7 @@ public class SimResult {
     private int totalSteps;
     private long totalTime;
 
-
+    /** Constructor ask for results **/
     public SimResult(String algorithm, double totalDistance, int totalSteps, long totalTime) {
         this.algorithm = algorithm;
         this.totalDistance = totalDistance;
@@ -16,14 +16,14 @@ public class SimResult {
 
     }
 
-
+    /** Display results in console **/
     @Override
     public String toString() {
         return "-----Results-----\n" +
                 "Used Algorithm: " + algorithm + "\n" +
                 "Total Distance: " + totalDistance + "\n" +
                 "Total Steps: " + totalSteps + "\n" +
-                "Total Time: " + totalTime;
+                "Total Time: " + totalTime + "milliseconds";
     }
 }
 

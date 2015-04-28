@@ -35,7 +35,7 @@ public class RandomGreedy extends Algorithm {
 
     @Override
     public void calculate() {
-        startTime = System.currentTimeMillis();
+        startTime = System.currentTimeMillis(); /** Start counting time **/
         int arrayLength = grid.size();
         int loopCounter = 0;
         Point lastPoint = initial;
@@ -43,22 +43,22 @@ public class RandomGreedy extends Algorithm {
         totalDistance = initial.calculateDistance(grid.get(0));
 
         while (loopCounter < arrayLength) {
-            Point current = grid.get(randomGenerator.nextInt(grid.size()));
-            field.drawLine(lastPoint, current, loopCounter);
-            double distance = lastPoint.calculateDistance(current);
-            totalDistance += distance;
+            Point current = grid.get(randomGenerator.nextInt(grid.size())); /** Get random point in the grid **/
+            field.drawLine(lastPoint, current, loopCounter);    /** Draw the line from last point to current point **/
+            double distance = lastPoint.calculateDistance(current); /** calculate the difference between those two **/
+            totalDistance += distance; /** Add difference on to the total distance **/
             lastPoint = current;
             grid.remove(current);
             loopCounter++;
         }
         totalSteps = loopCounter;
-        endTime = System.currentTimeMillis();
-        totalTime = endTime - startTime;
+        endTime = System.currentTimeMillis(); /** End counting time **/
+        totalTime = endTime - startTime; /** Difference = total time **/
     }
 
+    /** Give the results to result.java **/
     @Override
     public void getResult() {
         Result result = new Result("Random Greedy", totalDistance, totalSteps, totalTime);
-        System.out.println(result.toString());
     }
 }
