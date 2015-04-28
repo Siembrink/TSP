@@ -5,8 +5,8 @@
 package Interface;
 
 
-import Algorithm.Algorithms.Greedy;
 import Algorithm.Algorithms.Enumeration;
+import Algorithm.Algorithms.Greedy;
 import Algorithm.Algorithms.RandomGreedy;
 import jdk.internal.org.xml.sax.SAXParseException;
 
@@ -174,9 +174,6 @@ public class Frame extends JFrame implements ActionListener {
             } catch (Exception exc) {
                 System.out.println("Something went wrong.");
             }
-
-
-
         }
     }
 
