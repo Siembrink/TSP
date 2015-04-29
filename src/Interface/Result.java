@@ -16,17 +16,15 @@ public class Result extends JDialog implements ActionListener {
 
     private JButton generate;
     private JButton close;
-    private JLabel steps;
-    private JLabel distance;
-    private JLabel algorithmUsed;
-    private JLabel time;
 
     private String algorithm;
     private double totalDistance;
     private int totalSteps;
     private long totalTime;
 
-    /** Constructer asks for results and displays it in a JDialog. **/
+    /**
+     * Constructor asks for results and displays it in a JDialog. *
+     */
     public Result(String algorithm, double totalDistance, int totalSteps, long totalTime) {
 
         this.algorithm = algorithm;
@@ -35,25 +33,34 @@ public class Result extends JDialog implements ActionListener {
         this.totalTime = totalTime;
 
         setTitle("Results Simulation");
-        setLayout(new FlowLayout(FlowLayout.LEFT));
+        setLayout(new FlowLayout(FlowLayout.CENTER));
         setSize(250, 200);
-        algorithmUsed = new JLabel("Used Algorithm: " + algorithm + "\n");
+
+        JLabel algorithmUsed = new JLabel("Algorithm: " + algorithm + "\n");
+        algorithmUsed.setPreferredSize(new Dimension(200, 20));
         add(algorithmUsed);
 
-        time = new JLabel("Total Time: " + totalTime);
+        JLabel time = new JLabel("Total Time: " + totalTime);
+        time.setPreferredSize(new Dimension(200, 20));
         add(time);
 
-        distance = new JLabel("Total Distance: " + totalDistance);
+        JLabel distance = new JLabel("Total Distance: " + totalDistance);
+        distance.setPreferredSize(new Dimension(200, 20));
         add(distance);
 
-        steps = new JLabel("Total Steps: " + totalSteps);
+        JLabel steps = new JLabel("Total Steps: " + totalSteps);
+        steps.setPreferredSize(new Dimension(200, 20));
         add(steps);
 
-        generate = new JButton("Generate");
+        JLabel filler = new JLabel("    ");
+        filler.setPreferredSize(new Dimension(200, 20));
+        add(filler);
+
+        generate = new JButton("In console");
         add(generate);
         generate.addActionListener(this);
 
-        close = new JButton("Cancel");
+        close = new JButton("Close");
         add(close);
         close.addActionListener(this);
 
@@ -69,11 +76,11 @@ public class Result extends JDialog implements ActionListener {
             /* Generate result in console */
         } else if (e.getSource() == generate) {
             JOptionPane.showMessageDialog(this, "Results generated in console.");
-            SimResult result = new SimResult("Random Greedy", totalDistance, totalSteps, totalTime);
+            SimResult result = new SimResult(algorithm, totalDistance, totalSteps, totalTime);
             System.out.println(result);
             setVisible(false);
         }
-
     }
+
 }
 
