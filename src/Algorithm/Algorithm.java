@@ -37,11 +37,6 @@ public abstract class Algorithm {
         fieldSize = 25;
     }
 
-    // Getters and setters
-    public ArrayList<Point> getGrid() {
-        return grid;
-    }
-
     // Abstract methods
     public abstract void calculate();
     public abstract void getResult();

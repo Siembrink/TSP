@@ -19,7 +19,7 @@ public class SimResult {
     /** Display results in console **/
     @Override
     public String toString() {
-        return "-----Results-----\n" +
+        return "         -----Results-----\n" +
                 "Used Algorithm: " + algorithm + "\n" +
                 "Total Distance: " + totalDistance + "\n" +
                 "Total Steps: " + totalSteps + "\n" +

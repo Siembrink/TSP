@@ -1,7 +1,7 @@
 /**
  *         #------ TSP Frame ------#
  * Contains many methods for graphical objects
- * and the actionlistener for all buttons.
+ * and the actionListener for all buttons.
  */
 package Interface;
 
@@ -20,20 +20,15 @@ import java.awt.event.ActionListener;
 
 public class Frame extends JFrame implements ActionListener {
 
-    private JLabel width;
     private JComboBox selectWidth;
-    private Integer[] arrayWidth = {10, 25, 50, 100};
     private JButton change;
     private Field field;
-    private int selectedWidth;
     private JButton enumeration;
     private JButton randomSelected;
     private JTextField numberRandom;
     private JButton greedy;
     private JButton random;
     private JButton loadOrder;
-    private JFileChooser fileOpener;
-    private Order xml;
 
     public Frame() {
         /**
@@ -51,13 +46,14 @@ public class Frame extends JFrame implements ActionListener {
 //        c.insets = new Insets(20, 0, 40, 0);
 
         /** Option to change the width of Field **/
-        width = new JLabel("Width : ");
+        JLabel width = new JLabel("Width : ");
 //        c.gridx = 11;
 //        c.gridy = 0;
 //        c.ipadx = 5;
 //        add(width, c);
         add(width);
 
+        Integer[] arrayWidth = {10, 25, 50, 100};
         selectWidth = new JComboBox(arrayWidth);
 //        c.gridx = 12;
 //        add(selectWidth, c);
@@ -147,7 +143,7 @@ public class Frame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == change) {
-            selectedWidth = selectWidth.getSelectedIndex();
+            int selectedWidth = selectWidth.getSelectedIndex();
             this.getWidth(selectedWidth);
 
         } else if (e.getSource() == random) {
@@ -180,12 +176,12 @@ public class Frame extends JFrame implements ActionListener {
 
     private boolean getXMLOrder() {
         try {
-            fileOpener = new JFileChooser();
+            JFileChooser fileOpener = new JFileChooser();
             fileOpener.setFileSelectionMode(JFileChooser.FILES_ONLY);
             fileOpener.setFileFilter(new FileNameExtensionFilter("XML files (*.xml)", "xml"));
 
             if (fileOpener.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                xml = new Order(fileOpener.getSelectedFile());
+                Order xml = new Order(fileOpener.getSelectedFile());
                 System.out.println(xml.getCustomer().getLastname());
                 System.out.println(xml.getDatum());
                 for (int i = 0; i < xml.getArtikelnummer().size(); i++) {

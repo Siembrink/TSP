@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by Siem on 17-4-2015.
+ *             #--- Algorithm Results class ---#
  * This will generate a extra JFrame with the algorithm's results.
  * The user gets the options to display the results in the console.
  */
