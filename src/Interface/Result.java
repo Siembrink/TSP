@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *             #--- Algorithm Results class ---#
+ *              #--- Algorithm Results class ---#
  * This will generate a extra JFrame with the algorithm's results.
  * The user gets the options to display the results in the console.
  */
@@ -22,11 +22,11 @@ public class Result extends JDialog implements ActionListener {
     private int totalSteps;
     private long totalTime;
 
-    /**
-     * Constructor asks for results and displays it in a JDialog. *
-     */
-    public Result(String algorithm, double totalDistance, int totalSteps, long totalTime) {
 
+    public Result(String algorithm, double totalDistance, int totalSteps, long totalTime) {
+        /**
+         * Constructor asks for results and displays it in a JDialog. *
+         */
         this.algorithm = algorithm;
         this.totalDistance = totalDistance;
         this.totalSteps = totalSteps;
@@ -64,7 +64,6 @@ public class Result extends JDialog implements ActionListener {
         add(close);
         close.addActionListener(this);
 
-        setLocationRelativeTo(null); // Centers
         setVisible(true);
 
     }
@@ -72,12 +71,12 @@ public class Result extends JDialog implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == close) {
-            setVisible(false); // Close dialog
-            /* Generate result in console */
+            // Close dialog
+            setVisible(false);
         } else if (e.getSource() == generate) {
-            JOptionPane.showMessageDialog(this, "Results generated in console.");
             SimResult result = new SimResult(algorithm, totalDistance, totalSteps, totalTime);
             System.out.println(result);
+            JOptionPane.showMessageDialog(this, "Results generated in console.");
             setVisible(false);
         }
     }
