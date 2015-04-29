@@ -15,6 +15,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Field extends JPanel implements MouseListener {
 
@@ -132,7 +133,11 @@ public class Field extends JPanel implements MouseListener {
 
         for (Point point : grid) {
             if ((rootX == point.getX()) && (rootY == point.getY())) {
-                point.setStatus("SELECTED");
+                if (Objects.equals(point.getStatus(), "SELECTED")) {
+                    point.setStatus("");
+                } else {
+                    point.setStatus("SELECTED");
+                }
             }
         }
 
