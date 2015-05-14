@@ -21,12 +21,12 @@ public class Field extends JPanel implements MouseListener {
 
     private ArrayList<Point> grid;
     private ArrayList<Line> lines;
-
+    private Frame frame;
     private int columns;
     private int pointSize;
     private boolean drawLines;
 
-    public Field(int columns) {
+    public Field(int columns, Frame frame) {
         this.columns = columns;
         grid = new ArrayList<>();
         lines = new ArrayList<>();
@@ -112,12 +112,23 @@ public class Field extends JPanel implements MouseListener {
          * and randomize the points that are going to be selected.
          * Whenever the amount is greater then the grid size it will give a message.
          */
-        if (grid.size() < numbers) {
+        int selectedCount = 0;
+        for (Point point : grid) if (point.getSelected()) selectedCount++;
+
+        if (grid.size() - selectedCount < numbers) {
             System.out.println("Number is greater then field.");
+            JOptionPane.showMessageDialog(frame, "Number is greater then field.");
+
         } else {
             for(int i = 0; i < numbers; i++) {
+
                 int random = (int )(Math.random() * grid.size());
-                this.selectPointFromInput(random);
+
+                if (!grid.get(random).getSelected()) {
+                    this.selectPointFromInput(random);
+                } else {
+                    i--;
+                }
             }
 
         }
@@ -134,7 +145,7 @@ public class Field extends JPanel implements MouseListener {
         for (Point point : grid) {
             if ((rootX == point.getX()) && (rootY == point.getY())) {
                 if (Objects.equals(point.getStatus(), "SELECTED")) {
-                    point.setStatus("");
+                    point.resetStatus();
                 } else {
                     point.setStatus("SELECTED");
                 }
@@ -146,12 +157,13 @@ public class Field extends JPanel implements MouseListener {
 
     public void selectPointFromInput(int index) {
         /** This method selects a point when you load in an XML file. **/
-        for (Point point : grid) {
-            if (point.getIndex() == index) {
-                point.setStatus("SELECTED");
-                break;
-            }
-        }
+//        for (Point point : grid) {
+//            if (point.getIndex() == index) {
+//                point.setStatus("SELECTED");
+//                break;
+//            }
+//        }
+        grid.get(index).setStatus("SELECTED");
         repaint();
     }
 

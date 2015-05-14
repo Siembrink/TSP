@@ -31,6 +31,10 @@ public class Point {
         this.selected = true;
     }
 
+    public void resetStatus() {
+        this.status = "";
+        this.selected = false;
+    }
     public boolean getSelected() {
         return selected;
     }

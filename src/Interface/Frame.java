@@ -73,7 +73,7 @@ public class Frame extends JFrame implements ActionListener {
         add(loadOrder);
 
         /* Field grid */
-        field = new Field(10);
+        field = new Field(10, this);
 //        c.gridx = 0;
 //        c.gridy = 0;
 //        c.gridwidth = 10;

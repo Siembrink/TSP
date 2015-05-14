@@ -25,6 +25,7 @@ public class Enumeration extends Algorithm {
     private List<Route> routes;
 
 
+
     private Route shortestRoute;
     private int shortestRouteDistance;
 
@@ -90,44 +91,21 @@ public class Enumeration extends Algorithm {
         if ((k == arr.size() - 1)) {
             Route route = new Route(initial);
 
-//            for (Point point : arr ) {
-//                route.add(point);
-//                totalCalculations++;
-//            }
             for (int x = 0; x < arr.size() && route.getTotalDistance() < shortestRouteDistance; x++) {
                 route.add(arr.get(x));
                 totalCalculations++;
             }
 
-//            routes.add(route);
             if (route.getTotalDistance() < shortestRouteDistance) {
                 System.out.println(route.toStringRoute() + "shortest distance: " + shortestRouteDistance + " distance: " + route.getTotalDistance());
                 this.shortestRoute = route;
                 this.shortestRouteDistance = route.getTotalDistance();
-            } else {
-
             }
         }
-    }
-
-    private double calculateTotalDistance(List<Point> route) {
-        /** Calculate the total distance of a given list of points. **/
-        int distance = 0;
-        Point current = initial;
-
-        for (Point point : route) {
-            if (!(point == route.get(route.size() - 1))) {
-                distance += current.calculateDistance(point);
-            }
-        }
-
-        return distance;
     }
 
     @Override
     public void getResult() {
-//        SimResult result = new SimResult("Full Enumeration", shortestRoute.getTotalDistance(), totalCalculations);
-//        System.out.println(result.toString());
         Result results = new Result("enumeratie nieuw", shortestRouteDistance, totalCalculations, totalTime);
 
     }
