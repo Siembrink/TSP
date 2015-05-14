@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="Added XMLParser">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Algorithm/Algorithms/Enumeration_old.java" />
-      <change type="DELETED" beforePath="C:\Users\ewart\IdeaProjects\TSP\out\production\tsp\Algorithm\Result.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ewart\IdeaProjects\TSP\out\production\tsp\Algorithm\Route.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tsp/Algorithm/Algorithm.class" afterPath="$PROJECT_DIR$/out/production/tsp/Algorithm/Algorithm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tsp/Interface/Customer.class" afterPath="$PROJECT_DIR$/out/production/tsp/Interface/Customer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tsp/Interface/Field.class" afterPath="$PROJECT_DIR$/out/production/tsp/Interface/Field.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tsp/Interface/Frame.class" afterPath="$PROJECT_DIR$/out/production/tsp/Interface/Frame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tsp/Main.class" afterPath="$PROJECT_DIR$/out/production/tsp/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tsp/Algorithm/Algorithms/RandomGreedy.class" afterPath="$PROJECT_DIR$/out/production/tsp/Algorithm/Algorithms/RandomGreedy.class" />
+    <list default="true" id="b48ce248-2b19-4aa3-b313-a47565da09ff" name="Default" comment="optimized enumeration">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tsp/Algorithm/Algorithms/Enumeration.class" afterPath="$PROJECT_DIR$/out/production/tsp/Algorithm/Algorithms/Enumeration.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tsp/Interface/Result.class" afterPath="$PROJECT_DIR$/out/production/tsp/Interface/Result.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/tsp/Algorithm/SimResult.class" afterPath="$PROJECT_DIR$/out/production/tsp/Algorithm/SimResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Algorithm/Algorithms/Enumeration.java" afterPath="$PROJECT_DIR$/src/Algorithm/Algorithms/Enumeration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interface/Result.java" afterPath="$PROJECT_DIR$/src/Interface/Result.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Algorithm/SimResult.java" afterPath="$PROJECT_DIR$/src/Algorithm/SimResult.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tsp.iws" />
@@ -51,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Enumeration.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Enumeration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Algorithm/Algorithms/Enumeration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7963964">
-              <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
+            <state vertical-scroll-proportion="-13.4827585">
+              <caret line="130" column="12" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -81,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Result.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Result.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Interface/Result.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.9417808">
+              <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -107,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/src/Algorithm/SimResult.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -156,10 +149,10 @@
         <option value="$PROJECT_DIR$/src/Interface/Frame.java" />
         <option value="$PROJECT_DIR$/src/Algorithm/Algorithms/Greedy.java" />
         <option value="$PROJECT_DIR$/src/Algorithm/Algorithms/RandomGreedy.java" />
-        <option value="$PROJECT_DIR$/src/Algorithm/SimResult.java" />
-        <option value="$PROJECT_DIR$/src/Interface/Result.java" />
         <option value="$PROJECT_DIR$/src/Algorithm/Algorithms/Enumeration_old.java" />
         <option value="$PROJECT_DIR$/src/Algorithm/Algorithms/Enumeration.java" />
+        <option value="$PROJECT_DIR$/src/Algorithm/SimResult.java" />
+        <option value="$PROJECT_DIR$/src/Interface/Result.java" />
       </list>
     </option>
   </component>
@@ -627,7 +620,7 @@
       <workItem from="1429774582961" duration="217000" />
       <workItem from="1429779145113" duration="9593000" />
       <workItem from="1429861392724" duration="4648000" />
-      <workItem from="1431623868677" duration="5963000" />
+      <workItem from="1431623868677" duration="6376000" />
     </task>
     <task id="LOCAL-00001" summary="IntelliJ Commit test">
       <created>1428658374744</created>
@@ -755,11 +748,17 @@
       <option name="project" value="LOCAL" />
       <updated>1428665098745</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="optimized enumeration">
+      <created>1431630216276</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1431630216276</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55596000" />
+    <option name="totallyTimeSpent" value="56009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -844,7 +843,8 @@
     <MESSAGE value="Added grid drawing methods &amp; functionality" />
     <MESSAGE value="Added grid drawing methods &amp; functionality + Small fix" />
     <MESSAGE value="Added XMLParser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added XMLParser" />
+    <MESSAGE value="optimized enumeration" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimized enumeration" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1245,14 +1245,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Algorithm/SimResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm/Algorithms/Route.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1271,14 +1263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interface/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm/Algorithms/Enumeration_old.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1289,8 +1273,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm/Algorithms/Enumeration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7963964">
-          <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
+        <state vertical-scroll-proportion="-13.4827585">
+          <caret line="130" column="12" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Algorithm/SimResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interface/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9417808">
+          <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
           <folding />
         </state>
       </provider>

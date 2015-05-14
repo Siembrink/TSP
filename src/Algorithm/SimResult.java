@@ -5,10 +5,10 @@ public class SimResult {
     private String algorithm;
     private double totalDistance;
     private int totalSteps;
-    private long totalTime;
+    private double totalTime;
 
     /** Constructor ask for results **/
-    public SimResult(String algorithm, double totalDistance, int totalSteps, long totalTime) {
+    public SimResult(String algorithm, double totalDistance, int totalSteps, double totalTime) {
         this.algorithm = algorithm;
         this.totalDistance = totalDistance;
         this.totalSteps = totalSteps;
@@ -23,7 +23,7 @@ public class SimResult {
                 "Used Algorithm: " + algorithm + "\n" +
                 "Total Distance: " + totalDistance + "\n" +
                 "Total Steps: " + totalSteps + "\n" +
-                "Total Time: " + totalTime + "milliseconds";
+                "Total Time: " + totalTime + "seconds";
     }
 }
 

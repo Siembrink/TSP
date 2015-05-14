@@ -20,7 +20,7 @@ public class Result extends JDialog implements ActionListener {
     private String algorithm;
     private double totalDistance;
     private int totalSteps;
-    private long totalTime;
+    private double totalTime;
 
 
     public Result(String algorithm, double totalDistance, int totalSteps, long totalTime) {
@@ -30,7 +30,7 @@ public class Result extends JDialog implements ActionListener {
         this.algorithm = algorithm;
         this.totalDistance = totalDistance;
         this.totalSteps = totalSteps;
-        this.totalTime = totalTime;
+        this.totalTime = totalTime / 1000.0;
 
         setTitle("Results Simulation");
         setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -40,7 +40,8 @@ public class Result extends JDialog implements ActionListener {
         algorithmUsed.setPreferredSize(new Dimension(200, 20));
         add(algorithmUsed);
 
-        JLabel time = new JLabel("Total Time: " + totalTime);
+
+        JLabel time = new JLabel("Total Time: " + this.totalTime + " seconds");
         time.setPreferredSize(new Dimension(200, 20));
         add(time);
 
