@@ -14,16 +14,14 @@ package Algorithm.Algorithms;
 import Algorithm.Algorithm;
 import Interface.Field;
 import Interface.Point;
-import Interface.Result;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Enumeration extends Algorithm {
+public class Enumeration_old extends Algorithm {
 
     private Field field;
     private List<Route> routes;
-
 
     private Route shortestRoute;
     private int shortestRouteDistance;
@@ -33,7 +31,7 @@ public class Enumeration extends Algorithm {
     private long endTime;
     private long totalTime;
 
-    public Enumeration(Field field) {
+    public Enumeration_old(Field field) {
         super(field.getGrid());
         this.field = field;
         routes = new ArrayList<>();
@@ -54,21 +52,21 @@ public class Enumeration extends Algorithm {
         permute(grid, 0);
 
         // Check which route is the shortest
-//        for (Route route : routes) {
-//            if (route.getTotalDistance() < shortestRouteDistance) {
-//                shortestRoute = route;
-//                shortestRouteDistance = route.getTotalDistance();
-//                totalCalculations++;
-//            }
-//        }
+        for (Route route : routes) {
+            if (route.getTotalDistance() < shortestRouteDistance) {
+                shortestRoute = route;
+                shortestRouteDistance = route.getTotalDistance();
+                totalCalculations++;
+            }
+        }
 
         // Draw the route on the field
         field.drawRoute(shortestRoute);
         endTime = System.currentTimeMillis();
-        totalTime = endTime - startTime;
+        totalTime = startTime - endTime;
     }
 
-    public void permute(java.util.List<Point> arr, int k){
+    public void permute(List<Point> arr, int k) {
         /**
          * This is the array builder that calls itself to
          * calculate every possible combination of a given
@@ -81,7 +79,7 @@ public class Enumeration extends Algorithm {
 
         for (int i = k; i < arr.size(); i++) {
             java.util.Collections.swap(arr, i, k);
-            permute(arr, k+1);
+            permute(arr, k + 1);
             java.util.Collections.swap(arr, k, i);
 
             totalCalculations++;
@@ -90,23 +88,13 @@ public class Enumeration extends Algorithm {
         if ((k == arr.size() - 1)) {
             Route route = new Route(initial);
 
-//            for (Point point : arr ) {
-//                route.add(point);
-//                totalCalculations++;
-//            }
-            for (int x = 0; x < arr.size() && route.getTotalDistance() < shortestRouteDistance; x++) {
-                route.add(arr.get(x));
+            for (Point point : arr) {
+                route.add(point);
                 totalCalculations++;
             }
 
-//            routes.add(route);
-            if (route.getTotalDistance() < shortestRouteDistance) {
-                System.out.println(route.toStringRoute() + "shortest distance: " + shortestRouteDistance + " distance: " + route.getTotalDistance());
-                this.shortestRoute = route;
-                this.shortestRouteDistance = route.getTotalDistance();
-            } else {
-
-            }
+            routes.add(route);
+            System.out.println(route.toStringRoute() + " distance: " + route.getTotalDistance());
         }
     }
 
@@ -128,8 +116,6 @@ public class Enumeration extends Algorithm {
     public void getResult() {
 //        SimResult result = new SimResult("Full Enumeration", shortestRoute.getTotalDistance(), totalCalculations);
 //        System.out.println(result.toString());
-        Result results = new Result("enumeratie nieuw", shortestRouteDistance, totalCalculations, totalTime);
-
     }
 
 }
